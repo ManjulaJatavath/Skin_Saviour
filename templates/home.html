@@ -1,0 +1,71 @@
+{% include 'header.html' %}{% load static %}
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  intergrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<main class="home-container">
+    <div class="section-two">
+       <div class="text">Let us guide you on a journey towards unveiling your inner glow</div>
+    </div>
+    <div class="section-three">
+        <div class="conventional">
+            <img src="{% static 'home/images/conventional.jpeg' %}" alt="conventional" width="600px" height="400px">
+            <h3>CONVENTIONAL PRODUCTS</h3>
+            <p>Conventional skincare products follow traditional or widely accepted practices in their formulation and manufacturing and may include preservatives, fragrances, and other additives.</p>
+        </div>
+        <div class="natural">
+            <img src="{% static 'home/images/natural.webp' %}" alt="natural" width="600px" height="400px">
+            <h3>NATURAL PRODUCTS</h3>
+            <p>Natural skincare  products refer to ingredients sourced from nature, like plant extracts, essential oils, and minerals. They offer benefits such as nourishing the skin, providing antioxidants, and soothing irritation.</p>
+        </div>
+    </div>
+    <div class="section-four">
+        <div class="text">Revamp your basic skincare routine with conventional products</div>
+        <div class="card-container">
+        <div class="cards">
+            <img src="{% static 'home/images/facewash.jpeg' %}" alt="">
+            <h3>FACEWASH</h3>
+        </div>
+        <div class="cards">
+            <img src="{% static 'home/images/serum.png' %}" alt="">
+            <h3>SERUM</h3>
+        </div>
+        <div class="cards">
+            <img src="{% static 'home/images/moisturiser.jpg' %}" alt="">
+            <h3>MOISTURISER</h3>
+        </div>
+        <div class="cards">
+            <img src="{% static 'home/images/sunscreen.jpeg' %}" alt="">
+            <h3>SUNSCREEN</h3>
+        </div>
+        </div>
+    </div>
+    <div class="section-five">
+        <div class="text">Elevate Your Skin Regimen with the goodness of Natural Products</div>
+        <div class="card-container">
+        <div class="cards">
+            <img src="{% static 'home/images/honeywash.jpg' %}" alt="">
+            <h3>HONEY WASH</h3>
+        </div>
+        <div class="cards">
+            <img src="{% static 'home/images/jojoba.png' %}" alt="">
+            <h3>JOJOBA SERUM</h3>
+        </div>
+        <div class="cards">
+            <img src="{% static 'home/images/alovera.jpg' %}" alt="">
+            <h3>ALOVERA MOSTURIZER</h3>
+        </div>
+        <div class="cards">
+            <img src="{% static 'home/images/besan pack.png' %}" alt="">
+            <h3>BESAN PACK</h3>
+        </div>
+        </div>
+    </div>
+</main>
+
+
+{% include 'footer.html' %}
