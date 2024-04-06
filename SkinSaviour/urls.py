@@ -16,9 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home.views import home
+from home.views import HomeAPI
+from about.views import AboutAPI
+from quiz.views import QuizAPI
+from contact_us.views import ContactUsAPI
+from skin_treatment.views import SkinTreatmentAPI
+from tips.views import TipsAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home)
+    path('',HomeAPI,name="home"),
+    path('about/',AboutAPI,name="about"),
+    path('quiz/',QuizAPI,name="quiz"),
+    path('contact_us/',ContactUsAPI,name="contact_us"),
+    path('skin_treatment/',SkinTreatmentAPI,name="skin_treatment"),
+    path('tips/',TipsAPI,name="tips")
 ]

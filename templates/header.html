@@ -8,19 +8,23 @@
     <link rel="stylesheet" href="{% static 'header/header.css' %}">
     <link rel="stylesheet" href="{% static 'home/home.css' %}">
     <link rel="stylesheet" href="{% static 'footer/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'about/about.css' %}">
+    <script src="{% static 'header/header.js' %}" defer></script>
    
     <title>SKIN SAVIOUR</title>
 </head>
 <body>
-    <nav class="navigation" style="background:url('static/header/images/banner1.jpg');background-repeat: no-repeat;background-size: cover;background-position-y: center;">
+    <nav class="navigation">
+        <img class="image" src="{% static 'header/images/banner1.jpg' %}" alt="">
+        <div class="container">
         <div class="nav" id="navbar">
         <div class="section-logo" >
             <img src="{% static 'header/images/logo.png' %}" alt="logo" width="40px" height="40px">
             <h3 class="name">SKIN-SAVIOUR</h3>
         </div>
         <ul class="tabs">
-            <a href="#"><li>Home</li></a>
-            <a href="#"><li>About Us</li></a>
+            <a href="{% url 'home' %}"><li>Home</li></a>
+            <a href="{% url 'about' %}"><li>About Us</li></a>
             <a href="https://www.w3schools.com/cssref/pr_background-image.php"><li>Take Your Quiz</li></a>
             <a href="#"><li>Skin Treatement</li></a>
             <a href="#"><li>Tips</li></a>
@@ -30,6 +34,7 @@
         </div>
         <div class="caption">
           <h1 class="content">A ONE STOP DESTINATION FOR YOUR SKIN TIPS</h1>
+        </div>
         </div>
     </nav>
 </body>
