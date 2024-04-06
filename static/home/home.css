@@ -14,7 +14,7 @@
 
 .section-three{
     display: flex;
-    margin: 0px 20px;
+    margin: 0px 40px;
     justify-content: center;
     gap: 90px;
     align-items: center;
@@ -56,7 +56,7 @@
     justify-content: center;
     align-content: center;
     gap: 30px;
-    margin: 0px 60px;
+    margin: 0px 80px;
     text-align: center;
 }
 .section-four .card-container .cards img{
@@ -86,7 +86,7 @@ margin: 5rem 0px;
     justify-content: center;
     gap: 30px;
     align-content: center;
-    margin: 0px 60px;
+    margin: 0px 80px;
     text-align: center;
 }
 .section-five .card-container .cards img{
