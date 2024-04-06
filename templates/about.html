@@ -26,9 +26,16 @@
         </div>
     </div>
     <div class="division4">
-        <h2 class="heading">Ready to unlock your skin's full potential? <a href="#">Take our quick skin Quiz</a> and let us guide you on your journey to radiant skin.Together, let's rediscover the beauty of nature and unleash the power of skincare that's as pure as it is potent.
+        <h2 class="heading">Ready to unlock your skin's full potential? <a href="{% url 'quiz' %}">Take our quick skin Quiz</a> and let us guide you on your journey to radiant skin.Together, let's rediscover the beauty of nature and unleash the power of skincare that's as pure as it is potent.
         </h2>
     </div>
 </div>
 
-{% include 'footer.html' %}
+<div class="footer-container" style="background:url('../static/footer/images/products1.jpg');background-repeat: no-repeat;background-size: cover;background-position-y: center;">
+    <div class="icons">
+        <a href="https://mail.google.com/mail/"><img class="image" src="{% static 'footer/images/email.png' %}" alt="" width="40px" height="30px"></a>
+        <a href="https://www.instagram.com/"><img class="image" src="{% static 'footer/images/instagram.png' %}" alt="" width="40px" height="30px"></a>
+        <a href="https://twitter.com/?lang=en"><img class="image" src="{% static 'footer/images/twitter.png' %}" alt="" width="40px" height="30px"></a>
+    </div>
+    <div class="content">FOR MORE INFORMATION VISTIT THIS: <a href="{% url 'about' %}">ABOUT US PAGE</a></div>
+</div>
