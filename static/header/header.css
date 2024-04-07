@@ -69,3 +69,9 @@ font
     font-size: 3.6rem;
     text-align: center;
 }
+
+@media (max-width:1240px){
+    .navigation .caption {
+        left:15%
+    }
+}

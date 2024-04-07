@@ -19,4 +19,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("content").innerHTML="TIPS";
   else if(window.location.href=="http://localhost:8000/contact_us/")
     document.getElementById("content").innerHTML="CONTACT US";
+  else if(window.location.href=="http://localhost:8000/register/")
+    document.getElementById("content").innerHTML="Register/SignIn";
 });

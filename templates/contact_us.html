@@ -1,2 +1,45 @@
 {% include 'header.html' %}{% load static %}
-<h1>Contact us</h1>
+<div class="contact">
+    <form action="">
+            <label for="name" class="name" >Name</label>
+            <input type="text" id="name" name="name">
+        <div class="division2">
+            <label for="rating" class="rating">Rating</label>
+            <div>
+            <input type="radio" id="one" name="rating" value="one">
+            <label for="one" class="one" >⭐</label></br>
+            </div>
+            <div>
+            <input type="radio" id="two" name="rating" value="two">
+            <label for="two" class="two" >⭐⭐</label></br>
+            </div>
+            <div>
+            <input type="radio" id="three" name="rating" value="three">
+            <label for="three" class="three" >⭐⭐⭐</label></br>
+            </div>
+            <div>
+            <input type="radio" id="four" name="rating" value="four">
+            <label for="four" class="four" >⭐⭐⭐⭐</label></br>
+            </div>
+            <div>            
+            <input type="radio" id="five" name="rating" value="five">
+            <label for="five" class="five" >⭐⭐⭐⭐⭐</label></br>
+            </div>
+        </div>
+            <label for="feedback" class="feedback" >Feedback</label>
+            <textarea rows="6" cols="50" id="feedback" name="feedback"></textarea>
+        <div class="submit">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<!-- footer -->
+<div class="footer-container" style="background:url('../static/footer/images/products1.jpg');background-repeat: no-repeat;background-size: cover;background-position-y: center;">
+    <div class="icons">
+        <a href="https://mail.google.com/mail/"><img class="image" src="{% static 'footer/images/email.png' %}" alt="" width="40px" height="30px"></a>
+        <a href="https://www.instagram.com/"><img class="image" src="{% static 'footer/images/instagram.png' %}" alt="" width="40px" height="30px"></a>
+        <a href="https://twitter.com/?lang=en"><img class="image" src="{% static 'footer/images/twitter.png' %}" alt="" width="40px" height="30px"></a>
+    </div>
+    <div class="content">FOR MORE INFORMATION VISTIT THIS: <a href="{% url 'about' %}">ABOUT US PAGE</a></div>
+</div>
