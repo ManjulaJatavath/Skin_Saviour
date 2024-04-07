@@ -46,8 +46,12 @@
 }
 .contact .division2 div{
     display: flex;
+    align-items: center;
     gap: 15px;
     font-size: 16px;
+}
+.material-symbols-outlined{
+  color: gold;
 }
 
 .contact form .submit{
@@ -80,10 +84,23 @@
     gap: 10px;
     font-weight: 500;
 }
-.footer-container .icons .image{
-   border-radius: 50%;
-}
 .footer-container .content a{
     text-decoration: none;
     color: black;
+}
+.footer-container .content a:hover{
+    text-decoration: underline;
+}
+.footer-container .icons {
+    display: flex;
+    gap: 10px;
+    align-items:center ;
+    justify-content: center;
+}
+.footer-container .icons a{
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
 }
