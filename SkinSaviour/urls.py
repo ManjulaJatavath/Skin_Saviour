@@ -22,6 +22,7 @@ from quiz.views import QuizAPI
 from contact_us.views import ContactUsAPI
 from skin_treatment.views import SkinTreatmentAPI
 from tips.views import TipsAPI
+from core.views import RegisterAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,5 +31,6 @@ urlpatterns = [
     path('quiz/',QuizAPI,name="quiz"),
     path('contact_us/',ContactUsAPI,name="contact_us"),
     path('skin_treatment/',SkinTreatmentAPI,name="skin_treatment"),
-    path('tips/',TipsAPI,name="tips")
+    path('tips/',TipsAPI,name="tips"),
+    path('register/',RegisterAPI,name="register")
 ]

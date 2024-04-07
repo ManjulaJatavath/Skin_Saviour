@@ -10,7 +10,13 @@
     <link rel="stylesheet" href="{% static 'footer/footer.css' %}">
     <link rel="stylesheet" href="{% static 'about/about.css' %}">
     <link rel="stylesheet" href="{% static 'quiz/quiz.css' %}">
+    <link rel="stylesheet" href="{% static 'register/register.css' %}">
+    <link rel="stylesheet" href="{% static 'skin treatment/skin_treatment.css' %}">
+    <link rel="stylesheet" href="{% static 'contact/contact_us.css' %}">
     <script src="{% static 'header/header.js' %}" defer></script>
+    <script src="{% static 'register/register.js' %}" defer></script>
+
+    
    
     <title>SKIN SAVIOUR</title>
 </head>
@@ -30,7 +36,7 @@
             <a href="{% url 'skin_treatment' %}"><li>Skin Treatement</li></a>
             <a href="{% url 'tips' %}"><li>Tips</li></a>
             <a href="{% url 'contact_us' %}"><li>Contact Us</li></a>
-            <a href="#"><li>Register/SignIn</li></a>
+            <a href="{% url 'register' %}"><li>Register/SignIn</li></a>
         </ul>
         </div>
         <div class="caption">
