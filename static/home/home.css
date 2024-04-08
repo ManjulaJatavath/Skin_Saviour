@@ -141,7 +141,7 @@ margin: 5rem 0px;
 
 /* media queries */
 
-@media (max-width:1240px){
+@media (max-width:1920px){
     .section-three .conventional, .section-three .natural,.section-three .conventional img, .section-three .natural img{
         width: 500px;
     }
