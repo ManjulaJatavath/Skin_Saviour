@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'skin_treatment',
     'contact_us',
     'tips',
+
 ]
 
 MIDDLEWARE = [
@@ -86,9 +87,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Skin-Saviour',
         'USER' : 'postgres',
-        'PASSWORD':'Gowri262212@',
+        'PASSWORD':'Aasri@123',
         'HOST':'localhost',
-        'PORT':'5432'
+        'PORT':'5433'
     }
 }
 
@@ -136,4 +137,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-AUTH_USER_MODEL = 'core.User'
+LOGIN_REDIRECT_URL = 'base:home'
+LOGOUT_REDIRECT_URL = 'base:login'
