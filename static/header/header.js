@@ -22,3 +22,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   else if(window.location.href=="http://localhost:8000/register/")
     document.getElementById("content").innerHTML="Register/SignIn";
 });
+
+function logout(){
+      alert("Logged out successfully")
+}

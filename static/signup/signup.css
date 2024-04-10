@@ -13,7 +13,7 @@
     text-align: left;
     box-shadow: 1px 1px 8px 2px gray;
     margin: 2rem;
-    width: 40%;
+    width: 50%;
     border-radius: 6px;
     margin: 50px;
     padding: 50px;
@@ -56,43 +56,10 @@
 .signup form button:hover{
     cursor: pointer;
 }
-.signup form > span{
+.signup form .helptext{
     display: none;
 }
-/* footer */
 
-.footer-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    gap: 10px;
-    font-weight: 200;
-}
-.footer-container .signup{
-    width: 100%;
-    
-}
-.footer-container .signup a{
-    text-decoration: none;
-    color: black;
-}
-.footer-container .signup a:hover{
-    text-decoration: underline;
-
-}
-.footer-container .icons {
-    display: flex;
-    gap: 10px;
-    align-items:center ;
-    justify-content: center;
-}
-.footer-container .icons a{
-    padding: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-
+.signup form .errorlist{
+    display: none;
 }
