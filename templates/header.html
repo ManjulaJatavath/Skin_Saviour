@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'register/register.css' %}">
     <link rel="stylesheet" href="{% static 'skin treatment/skin_treatment.css' %}">
     <link rel="stylesheet" href="{% static 'contact/contact_us.css' %}">
+    <link rel="stylesheet" href="{% static 'login/login.css' %}">
     <script src="{% static 'header/header.js' %}" defer></script>
     <script src="{% static 'register/register.js' %}" defer></script>
 
@@ -36,7 +37,9 @@
             <a href="{% url 'skin_treatment' %}"><li>Skin Treatement</li></a>
             <a href="{% url 'tips' %}"><li>Tips</li></a>
             <a href="{% url 'contact_us' %}"><li>Contact Us</li></a>
-            <a href="{% url 'register' %}"><li>Register/SignIn</li></a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'logout' %}">Logout</a>
+            <!-- <a href="{% url 'login' %}"><li>Profile</li></a> -->
         </ul>
         </div>
         <div class="caption">

@@ -1,4 +1,5 @@
 from django.contrib.auth import logout
+from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import View
@@ -8,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-@login_required
+# @login_required
 def result(request):
     return render(request, 'home.html', {})
 
@@ -21,6 +22,10 @@ def AuthView(request):
         form  = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
 
+@login_required
+def LoginAPI(request):
+    return redirect('home')
 
-def RegisterAPI(request):
-    return render(request, 'register.html')
+def Logout(request):
+    logout(request)
+    return redirect('home')

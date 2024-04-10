@@ -1,40 +1,43 @@
-.content{
+.login{
     display: flex;
-    width: 100%;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
-.content .heading {
-    color: #b56231;
-    font-size: 40px;
+.login .heading{
+    color:#b56231;
     margin-top: 1rem;
 }
-.content  form{
+.login form{
     box-shadow: 1px 1px 8px 2px gray;
-    border-radius: 5px;
-    padding: 2rem; 
+    margin: 2rem;
+    width: 30%;
+    border-radius: 6px;
     margin: 50px;
+    padding: 50px;
 }
-.content  form label{
+.login form label{
+    width: 30%;
     color: #b56231;
     font-size: 25px;
     line-height: 3.5rem;
     margin-right: 1rem;
+    padding: 10px;
 }
-/* #id_username{
-    margin-bottom: 20px;
-   } */
-.content form input{
+.login form input{
+    width: 45%;
     border-radius: 3px;
     padding-left: 10px;
+    outline: none;
     border: none;
     box-shadow: 2px 2px 4px 1px rgb(216, 215, 215);
-    height: 35px;
+    height: 30px;
     font-size: 18px;
     color: gray;
+    margin-top: 1rem;
 }
-.content form button{
+.login form button{
     align-items: center;
     margin: 20px;
     color: white;
@@ -44,10 +47,10 @@
     font-size: 20px;
     padding: 8px 20px;
 }
-.content form button:hover{
+.login form button:hover{
     cursor: pointer;
 }
-/* footer */
+/* footer
 
 .footer-container{
     display: flex;
@@ -59,11 +62,11 @@
     font-weight: 500;
 }
 
-.footer-container .content a{
+.footer-container .login a{
     text-decoration: none;
     color: black;
 }
-.footer-container .content a:hover{
+.footer-container .login a:hover{
     text-decoration: underline;
 
 }

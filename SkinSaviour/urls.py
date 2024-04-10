@@ -22,7 +22,7 @@ from quiz.views import QuizAPI
 from contact_us.views import ContactUsAPI
 from skin_treatment.views import SkinTreatmentAPI
 from tips.views import TipsAPI
-from core.views import RegisterAPI
+from core.views import AuthView,LoginAPI,Logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,5 +33,7 @@ urlpatterns = [
     path('contact_us/',ContactUsAPI,name="contact_us"),
     path('skin_treatment/',SkinTreatmentAPI,name="skin_treatment"),
     path('tips/',TipsAPI,name="tips"),
-    path('register/',RegisterAPI,name="register")
+    path('login/',LoginAPI,name="login"),
+    path('signup/',AuthView,name="signup"),
+    path('logout/',Logout,name="logout")
 ]

@@ -1,4 +1,4 @@
-{%include 'header.html' %}{% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,26 +8,30 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="content">
-        <div>
+    <div class="login">
         <h1 class="heading">LOGIN FORM</h1>
         <form action="" method="POST">
             {% csrf_token %}
             {{form}}
-            <button type="Submit">Submit</button>
+            <div class="submit">
+                <button type="Submit">Submit</button>
+            </div>
+            <div class="last-section">
+                <span>Don't have an account </span><a href="{% url 'signup' %}">signup</a>
+            </div>
         </form>
-    </div>
+</div>
 </div>
 </body>
 </html>
 
 
 <!-- footer -->
-<div class="footer-container" style="background:url('/static/footer/images/products1.jpg');background-repeat: no-repeat;background-size: cover;background-position-y: center;">
+<!-- <div class="footer-container" style="background:url('/static/footer/images/products1.jpg');background-repeat: no-repeat;background-size: cover;background-position-y: center;">
     <div class="icons">
         <a href="https://mail.google.com/mail/"><img class="image" src="{% static 'footer/images/email.png' %}" alt="" width="40px" height="30px"></a>
         <a href="https://www.instagram.com/"><img class="image" src="{% static 'footer/images/instagram.png' %}" alt="" width="40px" height="30px"></a>
         <a href="https://twitter.com/?lang=en"><img class="image" src="{% static 'footer/images/twitter.png' %}" alt="" width="40px" height="30px"></a>
     </div>
     <div class="content">FOR MORE INFORMATION CONNECT US AT: <a href="https://mail.google.com/mail/">skinsaviour@gmail.com</a></div>
-</div>
+</div> -->

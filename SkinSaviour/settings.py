@@ -87,9 +87,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Skin-Saviour',
         'USER' : 'postgres',
-        'PASSWORD':'Aasri@123',
+        'PASSWORD':'Gowri262212@',
         'HOST':'localhost',
-        'PORT':'5433'
+        'PORT':'5432'
     }
 }
 
@@ -137,5 +137,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-LOGIN_REDIRECT_URL = 'base:home'
-LOGOUT_REDIRECT_URL = 'base:login'
+# LOGIN_REDIRECT_URL = 'base:home'
+# LOGOUT_REDIRECT_URL = 'login'

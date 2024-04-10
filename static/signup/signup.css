@@ -1,15 +1,16 @@
-.content{
+.signup{
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
-.content .heading{
+.signup .heading{
     color:#b56231;
     margin-top: 1rem;
 }
-.content form{
+.signup form{
+    text-align: left;
     box-shadow: 1px 1px 8px 2px gray;
     margin: 2rem;
     width: 40%;
@@ -17,7 +18,7 @@
     margin: 50px;
     padding: 50px;
 }
-.content form label{
+.signup form label{
     width: 30%;
     color: #b56231;
     font-size: 25px;
@@ -25,10 +26,12 @@
     margin-right: 1rem;
     padding: 10px;
 }
-.content form input{
+.signup form input{
     width: 45%;
     border-radius: 3px;
     padding-left: 10px;
+    float: right;
+    outline: none;
     border: none;
     box-shadow: 2px 2px 4px 1px rgb(216, 215, 215);
     height: 30px;
@@ -36,19 +39,25 @@
     color: gray;
     margin-top: 1rem;
 }
-.content form button{
+.signup form .submit,.signup form .last-section{
+    width: 100%;
+    text-align: center;
+}
+.signup form button{
     align-items: center;
     margin: 20px;
     color: white;
     background-color:#b56231;
     border: none;
     border-radius: 3px;
-    box-shadow: 1px 1px 8px 2px gray;
     font-size: 20px;
     padding: 8px 20px;
 }
-.content form button:hover{
+.signup form button:hover{
     cursor: pointer;
+}
+.signup form > span{
+    display: none;
 }
 /* footer */
 
@@ -61,15 +70,15 @@
     gap: 10px;
     font-weight: 200;
 }
-.footer-container .content{
+.footer-container .signup{
     width: 100%;
     
 }
-.footer-container .content a{
+.footer-container .signup a{
     text-decoration: none;
     color: black;
 }
-.footer-container .content a:hover{
+.footer-container .signup a:hover{
     text-decoration: underline;
 
 }

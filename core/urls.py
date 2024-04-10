@@ -5,6 +5,5 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     path("", result, name='result'),
-    path("signup/", AuthView, name='authview'),
     path("accounts/", include("django.contrib.auth.urls")),
 ]
