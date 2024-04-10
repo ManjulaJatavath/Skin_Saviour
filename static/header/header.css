@@ -21,7 +21,7 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 30px;
     position: fixed;
     color: white;
     width: 100%;
@@ -38,12 +38,22 @@
     border: none;
     width: 30px;
     height: 30px;
+    cursor: pointer;
 }
 .navigation #dropdown{
     display: none;
 }
-.navigation .active{
-    display: block;
+.navigation .dropdown-items{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    padding: 0px 30px;
+    gap: 10px;
+    right: 0px;
+    box-shadow: 2px 2px 5px rgb(40, 40, 40);
+    justify-content: center;
+    align-items: center;
 }
 .navigation .section-logo{
     display: flex;
