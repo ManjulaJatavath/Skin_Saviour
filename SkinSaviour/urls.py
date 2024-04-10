@@ -18,11 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 from home.views import HomeAPI
 from about.views import AboutAPI
-from quiz.views import QuizAPI
+from quiz.views import QuizAPI, save_data
 from contact_us.views import ContactUsAPI
 from skin_treatment.views import SkinTreatmentAPI
 from tips.views import TipsAPI
 from core.views import AuthView,LoginAPI,Logout
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +31,7 @@ urlpatterns = [
     path('home/',HomeAPI,name="home"),
     path('about/',AboutAPI,name="about"),
     path('quiz/',QuizAPI,name="quiz"),
+    path('save_data/', save_data, name='save_data'),
     path('contact_us/',ContactUsAPI,name="contact_us"),
     path('skin_treatment/',SkinTreatmentAPI,name="skin_treatment"),
     path('tips/',TipsAPI,name="tips"),
