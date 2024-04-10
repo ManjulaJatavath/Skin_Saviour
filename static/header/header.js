@@ -23,6 +23,42 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("content").innerHTML="Register/SignIn";
 });
 
+var dropdown=document.getElementById("profile");
+dropdown.addEventListener("click",()=>{
+
+  var element=document.getElementById("dropdown");
+  element.classList.toggle("active");
+  
+})
+  
+
+
 function logout(){
-      alert("Logged out successfully")
+  var popup=document.querySelector(".popup");
+
+  var overlay = document.getElementById('overlay');
+  var child=document.createElement("p");
+  var timer=document.createElement("div");
+
+
+  child.classList.add("loginerror");
+  timer.classList.add("timer-bar")
+  child.innerText="Logout successful";
+  popup.appendChild(child);
+  child.appendChild(timer);
+  overlay.style.display = 'block';
+
+
+  var width=100;
+  timerInterval= setInterval(function () {
+  width = width-2;
+  timer.style.width = width + '%';
+  }, 100);
+
+
+  setTimeout(()=>{
+      popup.style.display="none";
+      overlay.style.display = 'none';
+      clearInterval(timerInterval);
+  }, 5000)
 }

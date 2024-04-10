@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'login/login.css' %}">
+    <script src="{% static 'login/login.js' %}" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <div class="login">
+    <div id="overlay"><div class="popup" id="popup"></div></div>
+    
+    <div class="login" id="login">
         <h1 class="heading">LOGIN FORM</h1>
         <form action="" method="POST">
             {% csrf_token %}
@@ -23,13 +26,5 @@
 </div>
 </div>
 
-<script>
-    var error_section=document.querySelector(".errorlist")?document.querySelector(".errorlist"):none
-    console.log(error_section);
-    if(error_section){
-        var error=error_section.querySelector("li")
-        alert(error.innerText)
-    }
-</script>
 </body>
 </html>

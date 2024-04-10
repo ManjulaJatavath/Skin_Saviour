@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .login{
     display: flex;
     flex-direction: column;
@@ -7,14 +12,13 @@
 }
 .login .heading{
     color:#b56231;
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 .login form{
     box-shadow: 1px 1px 8px 2px gray;
     margin: 2rem;
     width: 30%;
     border-radius: 6px;
-    margin: 50px;
     padding: 50px;
 }
 .login form label{
@@ -39,7 +43,7 @@
 }
 .login form button{
     align-items: center;
-    margin: 20px;
+    margin: 30px;
     color: white;
     background-color:#b56231;
     border: none;
@@ -50,6 +54,39 @@
 .login form button:hover{
     cursor: pointer;
 }
-.signup form .errorlist{
+.login form .errorlist{
     display: none;
+}
+.popup{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.popup p{
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    width: 400px;
+
+}
+.timer-bar {
+    margin-top: 30px;
+    width: 100%; 
+    height: 15px;
+    border-radius: 20px;
+    background-color: #4CAF50;
+    transition: width 0.3s linear;
+}
+#overlay {
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 99; 
+    display: none; 
 }
