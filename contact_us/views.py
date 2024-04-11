@@ -31,5 +31,5 @@ def ContactUSData(request):
             )
         feedback_data.save()
             
-        return render(request, 'home.html')  # Redirect to a home page after submission
-    return render(request, 'contact_us.html')
+        return render(request, 'contact_us.html')  # Redirect to a home page after submission
+    return render(request, 'home.html')

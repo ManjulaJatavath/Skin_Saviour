@@ -33,6 +33,6 @@ def save_data(request):
             skincare_texture=skincare_texture
         )
         quiz_data.save()
-        return render(request, 'home.html')
+        return render(request, 'quiz.html')
 
     return render(request, 'quiz.html')

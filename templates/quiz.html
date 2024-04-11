@@ -4,70 +4,70 @@
     <form id="quiz-form" action="{% url 'save_data' %}" method="POST">
         {% csrf_token %}
         <h2>1. what skin treatment you prefer?</h2>
-        <input type="radio" id="ques11" name="treatment" value="Conventional Products" >
-        <label for="ques11" class="ques11">Conventional Products</label></br>
-        <input type="radio" id="ques12" name="treatment" value="Natural Products" >
+        <input type="radio" id="ques11" name="treatment" value="Conventional Products" required>
+        <label for="ques11" class="ques11" >Conventional Products</label></br>
+        <input type="radio" id="ques12" name="treatment" value="Natural Products" required>
         <label for="ques12" class="ques12">Natural Products</label></br>
         <h2>2. what's Your age?</h2>
-        <input type="radio" id="ques21" name="age" value="&#60 25" >
+        <input type="radio" id="ques21" name="age" value="&#60 25" required>
         <label for="ques21" class="ques21">&#60 25</label></br>
-        <input type="radio" id="ques22" name="age" value="25-40" >
+        <input type="radio" id="ques22" name="age" value="25-40" required>
         <label for="ques22" class="ques22">25-40</label></br>
         <h2>3. How does your skin feel when you wake up or 1 hour after you wash your face?</h2>
-        <input type="radio" id="ques31" name="skin_type" value="Dry" >
+        <input type="radio" id="ques31" name="skin_type" value="Dry" required>
         <label for="ques31" class="ques31">Dry</label></br>
-        <input type="radio" id="ques32" name="skin_type" value="Oily" >
+        <input type="radio" id="ques32" name="skin_type" value="Oily" required>
         <label for="ques32" class="ques32">Oily</label></br>
-        <input type="radio" id="ques33" name="skin_type" value="Combination(Oily at T junction and Dry at cheeks)" >
+        <input type="radio" id="ques33" name="skin_type" value="Combination(Oily at T junction and Dry at cheeks)" required>
         <label for="ques33" class="ques33">Combination(Oily at T junction and Dry at cheeks)</label></br>
-        <input type="radio" id="ques34" name="skin_type" value="Normal" >
+        <input type="radio" id="ques34" name="skin_type" value="Normal" required>
         <label for="ques34" class="ques34">Normal</label></br>
         <h2>4. Your Major Skin Concerns</h2>
-        <input type="checkbox" id="ques41" name="skin_concerns" value="Dehydration/ Breakouts" >
+        <input type="checkbox" id="ques41" name="skin_concerns" value="Dehydration/ Breakouts" required>
         <label for="ques41" class="ques41">Dehydration/ Breakouts</label></br>
-        <input type="checkbox" id="ques42" name="skin_concerns" value="Active Acne" >
+        <input type="checkbox" id="ques42" name="skin_concerns" value="Active Acne" required>
         <label for="ques42" class="ques42">Active Acne</label></br>
-        <input type="checkbox" id="ques43" name="skin_concerns" value="Acne Marks" >
+        <input type="checkbox" id="ques43" name="skin_concerns" value="Acne Marks" required>
         <label for="ques43" class="ques43">Acne Marks</label></br>
-        <input type="checkbox" id="ques44" name="skin_concerns" value="Dry Patches" >
+        <input type="checkbox" id="ques44" name="skin_concerns" value="Dry Patches" required>
         <label for="ques44" class="ques44">Dry Patches</label></br>
-        <input type="checkbox" id="ques45" name="skin_concerns" value="Wrinkles/Open pores" >
+        <input type="checkbox" id="ques45" name="skin_concerns" value="Wrinkles/Open pores" required>
         <label for="ques45" class="ques45">Wrinkles/Open pores</label></br>
-        <input type="checkbox" id="ques46" name="skin_concerns" value="Hyper Pigmentation" >
+        <input type="checkbox" id="ques46" name="skin_concerns" value="Hyper Pigmentation" required>
         <label for="ques46" class="ques46">Hyper Pigmentation</label></br>
-        <input type="checkbox" id="ques47" name="skin_concerns" value="Oil Control" >
+        <input type="checkbox" id="ques47" name="skin_concerns" value="Oil Control" required>
         <label for="ques47" class="ques47">Oil Control</label></br>
-        <input type="checkbox" id="ques48" name="skin_concerns" value="Sensitivity and redness" >
+        <input type="checkbox" id="ques48" name="skin_concerns" value="Sensitivity and redness" required>
         <label for="ques48" class="ques48">Sensitivity and redness</label></br>
         <h2>5. How does your skin react to new skincare products?</h2>
-        <input type="radio" id="ques51" name="react_to_new_products" value="Gets irritated and red easily" >
+        <input type="radio" id="ques51" name="react_to_new_products" value="Gets irritated and red easily" required>
         <label for="ques51" class="ques51">Gets irritated and red easily</label></br>
-        <input type="radio" id="ques52" name="react_to_new_products" value="Adapts Well" >
+        <input type="radio" id="ques52" name="react_to_new_products" value="Adapts Well" required>
         <label for="ques52" class="ques52">Adapts Well</label></br>
-        <input type="radio" id="ques53" name="react_to_new_products" value="Breaks out" >
+        <input type="radio" id="ques53" name="react_to_new_products" value="Breaks out" required>
         <label for="ques53" class="ques53">Breaks out</label></br>
-        <input type="radio" id="ques54" name="react_to_new_products" value="Not Sure" >
+        <input type="radio" id="ques54" name="react_to_new_products" value="Not Sure" required>
         <label for="ques54" class="ques54">Not Sure</label></br>
         <h2>6. Is your skin sensitive?</h2>
-        <input type="radio" id="ques61" name="sensitive" value="Yes" >
+        <input type="radio" id="ques61" name="sensitive" value="Yes" required >
         <label for="ques61" class="ques61">Yes</label></br>
-        <input type="radio" id="ques62" name="sensitive" value="No" >
+        <input type="radio" id="ques62" name="sensitive" value="No" required>
         <label for="ques62" class="ques62">No</label></br>
         <h2>7. Sleep Cycle</h2>
-        <input type="radio" id="ques71" name="sleep_cycle" value="&#60 4hrs" >
+        <input type="radio" id="ques71" name="sleep_cycle" value="&#60 4hrs" required>
         <label for="ques71" class="ques71">&#60 4hrs</label></br>
-        <input type="radio" id="ques72" name="sleep_cycle" value="&#60 6hrs" >
+        <input type="radio" id="ques72" name="sleep_cycle" value="&#60 6hrs" required>
         <label for="ques72" class="ques72">&#60 6hrs</label></br>
-        <input type="radio" id="ques73" name="sleep_cycle" value="6 &#45 8hrs" >
+        <input type="radio" id="ques73" name="sleep_cycle" value="6 &#45 8hrs" required>
         <label for="ques73" class="ques73">6 &#45 8hrs</label></br>
-        <input type="radio" id="ques74" name="sleep_cycle" value="&#62 8hrs" >
+        <input type="radio" id="ques74" name="sleep_cycle" value="&#62 8hrs" required>
         <label for="ques74" class="ques74">&#62 8hrs</label></br>
         <h2>8. What is your preferred skincare texture ?</h2>
-        <input type="radio" id="ques81" name="skincare_texture" value="Cream" >
+        <input type="radio" id="ques81" name="skincare_texture" value="Cream" required>
         <label for="ques81" class="ques81">Cream</label></br>
-        <input type="radio" id="ques82" name="skincare_texture" value="Gel" >
+        <input type="radio" id="ques82" name="skincare_texture" value="Gel" required>
         <label for="ques82" class="ques82">Gel</label></br>
-        <input type="radio" id="ques83" name="skincare_texture" value="Light Weight" >
+        <input type="radio" id="ques83" name="skincare_texture" value="Light Weight" required>
         <label for="ques83" class="ques83">Light Weight</label></br>
         <div  class="submit">
         <button type="submit">Submit</button>
