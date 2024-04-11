@@ -1,2 +1,7 @@
 For Database: 
   pip install psycopg2
+
+for removing pycachee files
+git rm -r --cached '*.pyc'
+git add .
+git commit -m "Remove .pyc files from Git repository"
