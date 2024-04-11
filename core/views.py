@@ -10,9 +10,6 @@ import time
 # Create your views here.
 
 
-# @login_required
-def result(request):
-    return render(request, 'home.html', {})
 
 def AuthView(request):
     if request.method == 'POST':
