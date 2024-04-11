@@ -7,12 +7,11 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def QuizAPI(request):
+    user=request.user
     
     data=QuizModel.objects.filter(user=user)
     if(data):
         data1=data.latest('id')
-        print(data1.user)
-        print(data1.age)
         context={
             "user":data1.user,
             "treatment":data1.treatment,
