@@ -1,7 +1,7 @@
 {% include 'header.html' %}{% load static %}
 <div class="quiz">
     <h1>Quiz</h1>
-    <form action="{% url 'save_data' %}" method="POST">
+    <form id="quiz-form" action="{% url 'save_data' %}" method="POST">
         {% csrf_token %}
         <h2>1. what skin treatment you prefer?</h2>
         <input type="radio" id="ques11" name="treatment" value="Conventional Products" >
@@ -85,3 +85,4 @@
     </div>
     <div class="content">FOR MORE INFORMATION CONNECT US AT: <a href="https://mail.google.com/mail/">skinsaviour@gmail.com</a></div>
 </div>
+

@@ -3,7 +3,7 @@ from .models import QuizModel
 # Register your models here.
 @admin.register(QuizModel)
 class QuizAdmin(admin.ModelAdmin):
-    list_display = ['id', 'treatment', 'skin_type', 'sensitive', 'skincare_texture']
+    list_display = ['id', 'user', 'treatment', 'skin_type', 'sensitive', 'skincare_texture']
     list_filter = ['treatment', 'skin_type', 'sensitive']
     search_fields = ['skin_type']
     list_per_page = 10
