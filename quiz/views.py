@@ -1,5 +1,5 @@
 from django.db import IntegrityError
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from rest_framework import status
 from quiz.models import QuizModel
 from django.contrib.auth.decorators import login_required
@@ -7,6 +7,19 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def QuizAPI(request):
+    
+    data=QuizModel.objects.filter(user=user)
+    if(data):
+        data1=data.latest('id')
+        print(data1.user)
+        print(data1.age)
+        context={
+            "user":data1.user,
+            "treatment":data1.treatment,
+            "age":data1.age,
+            "skin_type":data1.skin_type
+        }
+        return render(request, 'quiz.html',{"context":context})
     return render(request, 'quiz.html')
 
 def save_data(request):
@@ -33,6 +46,7 @@ def save_data(request):
             skincare_texture=skincare_texture
         )
         quiz_data.save()
-        return render(request, 'home.html')
+        
+        return redirect('quiz')
 
     return render(request, 'quiz.html')
