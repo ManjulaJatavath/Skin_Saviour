@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'skin_treatment',
     'contact_us',
     'tips',
+
 ]
 
 MIDDLEWARE = [
@@ -136,4 +137,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-AUTH_USER_MODEL = 'core.User'
+# LOGIN_REDIRECT_URL = 'base:home'
+# LOGOUT_REDIRECT_URL = 'login'

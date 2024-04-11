@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login/login.css' %}">
+    <script src="{% static 'login/login.js' %}" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="overlay"><div class="popup" id="popup"></div></div>
+    
+    <div class="login" id="login">
+        <h1 class="heading">LOGIN FORM</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <div class="submit">
+                <button type="Submit" id="submit">Submit</button>
+            </div>
+            <div class="last-section">
+                <span>Don't have an account </span><a href="{% url 'signup' %}">signup</a>
+            </div>
+        </form>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.login .heading{
+    color:#b56231;
+    margin-top: 3rem;
+}
+.login form{
+    box-shadow: 1px 1px 8px 2px gray;
+    margin: 2rem;
+    width: 30%;
+    border-radius: 6px;
+    padding: 50px;
+}
+.login form label{
+    width: 30%;
+    color: #b56231;
+    font-size: 25px;
+    line-height: 3.5rem;
+    margin-right: 1rem;
+    padding: 10px;
+}
+.login form input{
+    width: 45%;
+    border-radius: 3px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    box-shadow: 2px 2px 4px 1px rgb(216, 215, 215);
+    height: 30px;
+    font-size: 18px;
+    color: gray;
+    margin-top: 1rem;
+}
+.login form button{
+    align-items: center;
+    margin: 30px;
+    color: white;
+    background-color:#b56231;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    padding: 8px 20px;
+}
+.login form button:hover{
+    cursor: pointer;
+}
+.login form .errorlist{
+    display: none;
+}
+.popup{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.popup p{
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    width: 400px;
+
+}
+.timer-bar {
+    margin-top: 30px;
+    width: 100%; 
+    height: 15px;
+    border-radius: 20px;
+    background-color: #4CAF50;
+    transition: width 0.3s linear;
+}
+#overlay {
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 99; 
+    display: none; 
+}

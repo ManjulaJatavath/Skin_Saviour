@@ -1,1 +1,2 @@
-pip install psycopg2
+For Database: 
+  pip install psycopg2
