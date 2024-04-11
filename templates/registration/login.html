@@ -17,7 +17,7 @@
             {% csrf_token %}
             {{form}}
             <div class="submit">
-                <button type="Submit">Submit</button>
+                <button type="Submit" id="submit">Submit</button>
             </div>
             <div class="last-section">
                 <span>Don't have an account </span><a href="{% url 'signup' %}">signup</a>

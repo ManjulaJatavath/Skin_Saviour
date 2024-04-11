@@ -47,13 +47,21 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 100%;
-    padding: 0px 30px;
-    gap: 10px;
-    right: 0px;
-    box-shadow: 2px 2px 5px rgb(40, 40, 40);
+    background-color: #534f4f;
+    top: 90%;
+    padding: 6px 0px;
+    border-radius: 6px;
+    right: 10px;
+    box-shadow: 1px 1px 5px rgb(83, 83, 83);
     justify-content: center;
     align-items: center;
+}
+.navigation .dropdown-items a{
+    padding: 10px 10px;
+    width: 80px;
+}
+.navigation .dropdown-items a:hover{
+    background-color: black;
 }
 .navigation .section-logo{
     display: flex;
@@ -104,8 +112,8 @@ font
 .popup p{
     background-color: white;
     border-radius: 20px;
-    padding: 30px;
-    width: 400px;
+    padding: 20px;
+    width: 300px;
 
 }
 .timer-bar {

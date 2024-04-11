@@ -1,4 +1,4 @@
-var error_section=document.querySelector(".errorlist")?document.querySelector(".errorlist"):"none"
+var error_section=document.querySelector(".errorlist")?document.querySelector(".errorlist"):""
 if(error_section){
     var error=error_section.querySelector("li");
 

@@ -46,6 +46,30 @@ dropdown.addEventListener("click",(event)=>{
   
 
 
-function logout(){
-  alert("Logout successful")
+function logout(event){
+  var overlay = document.getElementById('overlay');
+    var popup = document.getElementById('popup');
+    var child=document.createElement("p");
+    var timer=document.createElement("div");
+
+
+    child.classList.add("loginerror");
+    timer.classList.add("timer-bar")
+    child.innerText="successful loggedout";
+    popup.appendChild(child);
+    child.appendChild(timer);
+    overlay.style.display = 'block';
+
+
+    var width=100;
+    timerInterval= setInterval(function () {
+    width = width-3;
+    timer.style.width = width + '%';
+    }, 100);
+
+
+    setTimeout(()=>{
+        overlay.style.display = 'none';
+        clearInterval(timerInterval);
+    }, 3000)
 }
