@@ -22,9 +22,10 @@
     padding: 4px;
     height: 50px;
     width: 300px;
+    border-radius: 8px;
 }
 .contact form #name{
-    height: 30px;
+    height: 40px;
 
 }
 .contact form .name,.contact form .feedback{

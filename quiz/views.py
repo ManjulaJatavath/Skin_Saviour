@@ -46,7 +46,7 @@ def save_data(request):
             skincare_texture=skincare_texture
         )
         quiz_data.save()
-        time.sleep(5)
+        time.sleep(3)
         return redirect('quiz')
 
     return render(request, 'quiz.html')
