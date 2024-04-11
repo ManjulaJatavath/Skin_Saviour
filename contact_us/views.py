@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from .models import ContactUSModel
+import time
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
@@ -30,6 +31,6 @@ def ContactUSData(request):
             feedback=feedback
             )
         feedback_data.save()
-            
-        return render(request, 'contact_us.html')  # Redirect to a home page after submission
-    return render(request, 'home.html')
+        time.sleep(5)
+        return redirect('home')  # Redirect to a home page after submission
+    return render(request, 'contact_us.html')

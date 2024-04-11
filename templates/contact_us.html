@@ -1,4 +1,5 @@
 {% include 'header.html' %}{% load static %}
+<div id="overlay"><div class="popup" id="popup"></div></div>
 <div class="contact">
     <form id="contact_form" action="{% url 'save_form_data' %}" method="POST">
         {% csrf_token %}
@@ -79,12 +80,21 @@
 <script>
     // JavaScript code to display a pop-up message when the form is submitted
     document.getElementById('contact_form').addEventListener('submit', function(event) {
-        
-        // Display a pop-up message
-        alert('Form submitted successfully!');
-        
-        // Redirect to the home page after the user clicks "OK" on the popup
-        window.location.href = "";
+        var overlay = document.getElementById('overlay');
+        var popup = document.getElementById('popup');
+        var child=document.createElement("p");
+
+
+        child.classList.add("loginerror");
+        child.innerText="Thank You For Your Valuable Feedback";
+        popup.appendChild(child);
+        overlay.style.display = 'block';
+
+        setTimeout(()=>{
+            overlay.style.display = 'none';
+            clearInterval(timerInterval);
+        }, 3000)
+
     });
 </script>
 
