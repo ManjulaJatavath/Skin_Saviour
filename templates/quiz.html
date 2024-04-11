@@ -1,4 +1,5 @@
 {% include 'header.html' %}{% load static %}
+<div id="overlay"><div class="popup" id="popup"></div></div>
 <div class="quiz">
     <h1>Quiz</h1>
     <form id="quiz-form" action="{% url 'save_data' %}" method="POST">
@@ -23,21 +24,21 @@
         <input type="radio" id="ques34" name="skin_type" value="Normal" required>
         <label for="ques34" class="ques34">Normal</label></br>
         <h2>4. Your Major Skin Concerns</h2>
-        <input type="checkbox" id="ques41" name="skin_concerns" value="Dehydration/ Breakouts" required>
+        <input type="checkbox" id="ques41" name="skin_concerns" value="Dehydration/ Breakouts" >
         <label for="ques41" class="ques41">Dehydration/ Breakouts</label></br>
-        <input type="checkbox" id="ques42" name="skin_concerns" value="Active Acne" required>
+        <input type="checkbox" id="ques42" name="skin_concerns" value="Active Acne" >
         <label for="ques42" class="ques42">Active Acne</label></br>
-        <input type="checkbox" id="ques43" name="skin_concerns" value="Acne Marks" required>
+        <input type="checkbox" id="ques43" name="skin_concerns" value="Acne Marks" >
         <label for="ques43" class="ques43">Acne Marks</label></br>
-        <input type="checkbox" id="ques44" name="skin_concerns" value="Dry Patches" required>
+        <input type="checkbox" id="ques44" name="skin_concerns" value="Dry Patches" >
         <label for="ques44" class="ques44">Dry Patches</label></br>
-        <input type="checkbox" id="ques45" name="skin_concerns" value="Wrinkles/Open pores" required>
+        <input type="checkbox" id="ques45" name="skin_concerns" value="Wrinkles/Open pores" >
         <label for="ques45" class="ques45">Wrinkles/Open pores</label></br>
-        <input type="checkbox" id="ques46" name="skin_concerns" value="Hyper Pigmentation" required>
+        <input type="checkbox" id="ques46" name="skin_concerns" value="Hyper Pigmentation" >
         <label for="ques46" class="ques46">Hyper Pigmentation</label></br>
-        <input type="checkbox" id="ques47" name="skin_concerns" value="Oil Control" required>
+        <input type="checkbox" id="ques47" name="skin_concerns" value="Oil Control" >
         <label for="ques47" class="ques47">Oil Control</label></br>
-        <input type="checkbox" id="ques48" name="skin_concerns" value="Sensitivity and redness" required>
+        <input type="checkbox" id="ques48" name="skin_concerns" value="Sensitivity and redness" >
         <label for="ques48" class="ques48">Sensitivity and redness</label></br>
         <h2>5. How does your skin react to new skincare products?</h2>
         <input type="radio" id="ques51" name="react_to_new_products" value="Gets irritated and red easily" required>
@@ -89,11 +90,27 @@
 <script>
     // JavaScript code to display a pop-up message when the form is submitted
     document.getElementById('quiz-form').addEventListener('submit', function(event) {
-        
+        var overlay = document.getElementById('overlay');
+        var popup = document.getElementById('popup');
+        var child=document.createElement("p");
+
+
+        child.classList.add("loginerror");
+        child.innerText="Data has been saved successfully";
+        popup.appendChild(child);
+        overlay.style.display = 'block';
+
+        setTimeout(()=>{
+            overlay.style.display = 'none';
+            clearInterval(timerInterval);
+        }, 3000)
+        console.log("hii")
+
+
         // Display a pop-up message
-        alert('Form submitted successfully!');
+        //alert('Form submitted successfully!');
         
         // Redirect to the home page after the user clicks "OK" on the popup
-        window.location.href = "/";
+        //window.location.href = "/";
     });
 </script>

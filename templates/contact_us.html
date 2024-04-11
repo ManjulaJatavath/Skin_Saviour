@@ -3,17 +3,17 @@
     <form id="contact_form" action="{% url 'save_form_data' %}" method="POST">
         {% csrf_token %}
             <label for="name" class="name" >Name</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required>
         <div class="division2">
             <label for="rating" class="rating">Rating</label>
             <div>
-            <input type="radio" id="one" name="rating" value="one">
+            <input type="radio" id="one" name="rating" value="one" required>
             <label for="one" class="one" ><span class="material-symbols-outlined">
                 star
                 </span></label></br>
             </div>
             <div>
-            <input type="radio" id="two" name="rating" value="two">
+            <input type="radio" id="two" name="rating" value="two" required>
             <label for="two" class="two" ><span class="material-symbols-outlined">
                 star
                 </span><span class="material-symbols-outlined">
@@ -21,7 +21,7 @@
                     </span></label></br>
             </div>
             <div>
-            <input type="radio" id="three" name="rating" value="three">
+            <input type="radio" id="three" name="rating" value="three" required>
             <label for="three" class="three" ><span class="material-symbols-outlined">
                 star
                 </span><span class="material-symbols-outlined">
@@ -31,7 +31,7 @@
                         </span></label></br>
             </div>
             <div>
-            <input type="radio" id="four" name="rating" value="four">
+            <input type="radio" id="four" name="rating" value="four" required>
             <label for="four" class="four" ><span class="material-symbols-outlined">
                 star
                 </span><span class="material-symbols-outlined">
@@ -43,7 +43,7 @@
                             </span></label></br>
             </div>
             <div>            
-            <input type="radio" id="five" name="rating" value="five">
+            <input type="radio" id="five" name="rating" value="five" required>
             <label for="five" class="five" ><span class="material-symbols-outlined">
                 star
                 </span><span class="material-symbols-outlined">
@@ -58,7 +58,7 @@
             </div>
         </div>
             <label for="feedback" class="feedback" >Feedback</label>
-            <textarea rows="6" cols="50" id="feedback" name="feedback"></textarea>
+            <textarea rows="6" cols="50" id="feedback" name="feedback" required></textarea>
         <div class="submit">
             <button type="submit">Submit</button>
         </div>
@@ -79,8 +79,6 @@
 <script>
     // JavaScript code to display a pop-up message when the form is submitted
     document.getElementById('contact_form').addEventListener('submit', function(event) {
-        // Prevent the default form submission behavior
-        event.preventDefault();
         
         // Display a pop-up message
         alert('Form submitted successfully!');

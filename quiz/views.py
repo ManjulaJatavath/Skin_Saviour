@@ -1,5 +1,6 @@
+import time
 from django.db import IntegrityError
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from rest_framework import status
 from quiz.models import QuizModel
 from django.contrib.auth.decorators import login_required
@@ -33,6 +34,7 @@ def save_data(request):
             skincare_texture=skincare_texture
         )
         quiz_data.save()
-        return render(request, 'quiz.html')
+        time.sleep(6)
+        return redirect('quiz')
 
     return render(request, 'quiz.html')
