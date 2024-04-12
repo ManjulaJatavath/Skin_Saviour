@@ -15,10 +15,15 @@ def QuizAPI(request):
     if data:
         data = QuizModel.objects.get(user=user)
         context={
-            "user":user,
-            "treatment":data.treatment,
-            "age":data.age,
-            "skin_type":data.skin_type
+            "user":user_data.user,
+            "treatment":user_data.treatment,
+            "age":user_data.age,
+            "skin_type":user_data.skin_type,
+            "skin_concerns":user_data.skin_concerns,
+            "react_to_new_products":user_data.react_to_new_products,
+            "sensitive":user_data.sensitive,
+            "sleep_cycle":user_data.sleep_cycle,
+            "skincare_texture":user_data.skincare_texture
         }
         return render(request, 'quiz.html',{"context":context})
 
@@ -63,8 +68,9 @@ def save_data(request):
             sleep_cycle=sleep_cycle,
             skincare_texture=skincare_texture
         )
-        time.sleep(5)
-        # return render(request, 'quiz.html')   
+
+        quiz_data.save()
+        time.sleep(3)
         return redirect('quiz')
         
 

@@ -2,10 +2,12 @@ from django.shortcuts import render
 
 from quiz.models import QuizModel
 from skin_treatment.models.face_wash import FaceWashModel
+from django.contrib.auth.decorators import login_required
 # Create your views here.
-
+@login_required
 def SkinTreatmentAPI(request):
-       data = QuizModel.objects.get(user=request.user)
+       user=request.user
+       data = QuizModel.objects.get(user=user)
        if data:
                data = QuizModel.objects.latest('id')
                suggested_facewash = FaceWashModel.objects.filter(
@@ -20,5 +22,5 @@ def SkinTreatmentAPI(request):
                         )
                print(suggested_facewash)
                return render(request, 'skin_treatment.html', {'suggested_facewash': list(suggested_facewash)}) 
-       return render(request, 'skin_treatment.html')  
+       return render(request, 'skin_treatment.html',{"user":user})  
 
