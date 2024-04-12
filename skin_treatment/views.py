@@ -6,6 +6,7 @@ from skin_treatment.models.face_wash import FaceWashModel
 
 def SkinTreatmentAPI(request):
        data = QuizModel.objects.get(user=request.user)
+       print(data)
        if data:
                data = QuizModel.objects.latest('id')
                suggested_facewash = FaceWashModel.objects.filter(
