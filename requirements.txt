@@ -1,2 +1,8 @@
-For Database: 
-  pip install psycopg2
+# For Database: 
+#   pip install psycopg2
+
+# for admin:
+#   pip install django-import-export
+
+# for image files:
+#   python -m pip install Pillow 

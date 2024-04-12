@@ -23,6 +23,8 @@ from contact_us.views import ContactUsAPI
 from skin_treatment.views import SkinTreatmentAPI
 from tips.views import TipsAPI
 from core.views import AuthView,LoginAPI,Logout
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -39,4 +41,4 @@ urlpatterns = [
     path('login/',LoginAPI,name="login"),
     path('signup/',AuthView,name="signup"),
     path('logout/',Logout,name="logout")
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
