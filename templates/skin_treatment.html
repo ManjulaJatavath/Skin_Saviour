@@ -1,36 +1,103 @@
 {% include 'header.html' %}{% load static %}
 
 <div class="skin-treatment">
-    <h2>Welcome to skin saviour! {{user}}</h2>
     <h1>MORNING ROUTINE BASED ON YOUR SKIN ANALYSIS</h1>
-    <p>
-        {% for facewash in suggested_facewash %}
-            {{facewash}}
-        {% endfor %}
-    </p>
+
     <div class="content">
         <div class="facewash">
+            {% for facewash in suggested_facewash %}
             <h3>STEP 1 -FACE WASH/CLEANSER:</h3>
             <div class="essentials">
-                <div class="head">Essential:</div>
-                <ul class="description">Opt for face washes with 
-                    <li>Hypoallergenic</li>
-                    <li>Fragrance-Free and Soap-Free</li>
-                    <li>Non-Comedogenic and pH-Balanced</li>
-                    <li>Gentle Cleansing Agents such as coco-glucoside, decyl glucoside, or sodium lauroyl sarcosinate, which effectively remove dirt without causing irritation</li>  
-                    <li>Calming Ingredients such as aloevera, chamomile, cucumber extract, or oat extract to help alleviate redness and irritation.</li>      
-                </ul>
+                <div class="head">Essentials:</div>
+                    
+                    <ul class="description">
+                        Opt for face washes with
+                        {{facewash.essentials |safe}}
+                               
+                    </ul>
+                </div>
+                
+                <div class="essentials">
+                    <div class="head-images">
+                        <img src="{{ facewash.image1.url }}" alt="">
+                        <img src="{{ facewash.image2.url }}" alt="">
+                    </div>
+                    <div class="description">
+                        {{facewash.description |safe}}
+                    </div>
             </div>
+            {% endfor %}
+        </div>
+        <div class="serum">
+            {% for facewash in suggested_facewash %}
+            <h3>STEP 2 -SERUM:</h3>
             <div class="essentials">
-                <div class="head-images">
-                    <img src="{% static 'home/images/alovera.jpg' %}" alt="">
-                    <img src="{% static 'home/images/alovera.jpg' %}" alt="">
+                <div class="head">Essentials:</div>
+                    
+                    <ul class="description">
+                        Opt for serums with
+                        {{facewash.essentials |safe}}
+                               
+                    </ul>
                 </div>
-                <div class="description">
-                    <p>Cetaphil Gentle Cleanser provides 48 hours of hydration with hydrating glycerin and skin essential vitamins B5 (panthenol) and B3 (niacinamide) and soap free, fragrance free, non foaming.</p></br>
-                    <p>Neutrogena Hydro Boost Water Gel CleanserLeaves skin refreshingly clean and touchable supple every time you cleanse Helps maintain the skin’s moisture barrier.</p>
-                </div>
+               
+                <div class="essentials">
+                    <div class="head-images">
+                        <img src="{{ facewash.image1.url }}" alt="">
+                        <img src="{{ facewash.image2.url }}" alt="">
+                    </div>
+                    <div class="description">
+                        {{facewash.description |safe}}
+                    </div>
             </div>
+            {% endfor %}
+        </div>
+        <div class="moisturizer">
+            {% for facewash in suggested_facewash %}
+            <h3>STEP 3 -MOISTURIZER:</h3>
+            <div class="essentials">
+                <div class="head">Essentials:</div>
+                    
+                    <ul class="description">
+                        Opt for moisturizers with
+                        {{facewash.essentials |safe}}
+                               
+                    </ul>
+                </div>
+                
+                <div class="essentials">
+                    <div class="head-images">
+                        <img src="{{ facewash.image1.url }}" alt="">
+                        <img src="{{ facewash.image2.url }}" alt="">
+                    </div>
+                    <div class="description">
+                        {{facewash.description |safe}}
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="sunscreen">
+            {% for facewash in suggested_facewash %}
+            <h3>STEP 4 -SUNSCREEN:</h3>
+            <div class="essentials">
+                <div class="head">Essentials:</div>
+                    
+                    <ul class="description">
+                        Opt for sunscreens with
+                        {{facewash.essentials |safe}}
+                               
+                    </ul>
+                </div>
+                <div class="essentials">
+                    <div class="head-images">
+                        <img src="{{ facewash.image1.url }}" alt="">
+                        <img src="{{ facewash.image2.url }}" alt="">
+                    </div>
+                    <div class="description">
+                        {{facewash.description |safe}}
+                    </div>
+            </div>
+            {% endfor %}
         </div>
         
     </div>

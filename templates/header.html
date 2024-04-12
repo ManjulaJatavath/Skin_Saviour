@@ -29,12 +29,12 @@
             <h3 class="name">SKIN-SAVIOUR</h3>
         </div>
         <ul class="tabs">
-            <a href="{% url 'home' %}"><li>Home</li></a>
-            <a href="{% url 'about' %}"><li>About Us</li></a>
-            <a href="{% url 'quiz' %}"><li>Take Your Quiz</li></a>
-            <a href="{% url 'skin_treatment' %}"><li>Skin Treatement</li></a>
-            <a href="{% url 'tips' %}"><li>Tips</li></a>
-            <a href="{% url 'contact_us' %}"><li>Contact Us</li></a>
+            <a href="{% url 'home' %}"><li  class="{% if active_tab == 'home' %}active{% endif %}">Home</li></a>
+            <a href="{% url 'about' %}"><li  class="{% if active_tab == 'about' %}active{% endif %}">About Us</li></a>
+            <a href="{% url 'quiz' %}"><li class="{% if active_tab == 'quiz' %}active{% endif %}">Take Your Quiz</li></a>
+            <a href="{% url 'skin_treatment' %}"><li class="{% if active_tab == 'skin_treatment' %}active{% endif %}">Skin Treatement</li></a>
+            <a href="{% url 'tips' %}"><li  class="{% if active_tab == 'tips' %}active{% endif %}">Tips</li></a>
+            <a href="{% url 'contact_us' %}"><li class="{% if active_tab == 'contact_us' %}active{% endif %}">Contact Us</li></a>
             
             <button type="button" class="profile" id="profile" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />

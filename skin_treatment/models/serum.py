@@ -1,7 +1,7 @@
 from django.db import models
 from skin_treatment.models.treatment import *
 from utils.helpers.timestamp_model import TimeStampedModel
-from utils.helpers.image_file_path import  moisturizer_image
+from utils.helpers.image_file_path import  serum_image
 
 class SerumModel(TimeStampedModel):
     treatment = models.ForeignKey(TreatmentModel, on_delete=models.CASCADE)
@@ -13,8 +13,8 @@ class SerumModel(TimeStampedModel):
     sleep_cycle = models.ForeignKey(SleepCycleModel, on_delete=models.CASCADE, blank=True)
     skincare_texture = models.ForeignKey(SkinCareTextureModel, on_delete=models.CASCADE)
     essentials = models.TextField()
-    image1 = models.ImageField(upload_to=moisturizer_image)
-    image2 = models.ImageField(upload_to=moisturizer_image)
+    image1 = models.ImageField(upload_to=serum_image)
+    image2 = models.ImageField(upload_to=serum_image)
     description = models.TextField()
 
     def __str__(self):

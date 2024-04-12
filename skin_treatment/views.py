@@ -18,9 +18,8 @@ def SkinTreatmentAPI(request):
                     react_to_new_products__react_to_new_products=data.react_to_new_products,
                     senstive__senstive=data.sensitive,
                     sleep_cycle__sleep_cycle=data.sleep_cycle,
-                    skincare_texture__skin_texture=data.skincare_texture
+                    skincare_texture__skin_texture=data.skincare_texture,
                         )
-               print(suggested_facewash)
-               return render(request, 'skin_treatment.html', {'suggested_facewash': list(suggested_facewash)}) 
-       return render(request, 'skin_treatment.html',{"user":user})  
+               return render(request, 'skin_treatment.html', {'suggested_facewash': suggested_facewash,'active_tab': 'skin_treatment',}) 
+       return render(request, 'skin_treatment.html',{'active_tab': 'skin_treatment'})  
 

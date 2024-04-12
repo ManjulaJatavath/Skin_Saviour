@@ -63,6 +63,7 @@
 .navigation .dropdown-items a:hover{
     background-color: black;
 }
+
 .navigation .section-logo{
     display: flex;
     gap:20px;
@@ -75,6 +76,9 @@ font
 .navigation .tabs a{
     color: white;
     text-decoration: none;
+}
+.navigation .tabs .active{
+    color: #b56231;
 }
 
 .navigation .tabs{

@@ -15,19 +15,19 @@ def QuizAPI(request):
     if data:
         data = QuizModel.objects.get(user=user)
         context={
-            "user":user_data.user,
-            "treatment":user_data.treatment,
-            "age":user_data.age,
-            "skin_type":user_data.skin_type,
-            "skin_concerns":user_data.skin_concerns,
-            "react_to_new_products":user_data.react_to_new_products,
-            "sensitive":user_data.sensitive,
-            "sleep_cycle":user_data.sleep_cycle,
-            "skincare_texture":user_data.skincare_texture
+            "user":data.user,
+            "treatment":data.treatment,
+            "age":data.age,
+            "skin_type":data.skin_type,
+            "skin_concerns":data.skin_concerns,
+            "react_to_new_products":data.react_to_new_products,
+            "sensitive":data.sensitive,
+            "sleep_cycle":data.sleep_cycle,
+            "skincare_texture":data.skincare_texture,
         }
-        return render(request, 'quiz.html',{"context":context})
+        return render(request, 'quiz.html',{"context":context,'active_tab': 'quiz',})
 
-    return render(request, 'quiz.html')
+    return render(request, 'quiz.html',{'active_tab': 'quiz'})
 
 def save_data(request):
     suggested_facewash = None
@@ -69,9 +69,8 @@ def save_data(request):
             skincare_texture=skincare_texture
         )
 
-        quiz_data.save()
         time.sleep(3)
         return redirect('quiz')
         
 
-    return render(request, 'quiz.html')
+    return render(request, 'quiz.html',{'active_tab': 'quiz'})
