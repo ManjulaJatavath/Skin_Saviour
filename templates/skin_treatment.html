@@ -1,8 +1,34 @@
 {% include 'header.html' %}{% load static %}
 
 <div class="skin-treatment">
-    <h1>Welcome to skin saviour! {{user}}</h1>
-    <h4>MORNING ROUTINE BASED ON YOUR SKIN ANALYSIS</h4>
+    <h2>Welcome to skin saviour! {{user}}</h2>
+    <h1>MORNING ROUTINE BASED ON YOUR SKIN ANALYSIS</h1>
+    <div class="content">
+        <div class="facewash">
+            <h3>STEP 1 -FACE WASH/CLEANSER:</h3>
+            <div class="essentials">
+                <div class="head">Essential:</div>
+                <ul class="description">Opt for face washes with 
+                    <li>Hypoallergenic</li>
+                    <li>Fragrance-Free and Soap-Free</li>
+                    <li>Non-Comedogenic and pH-Balanced</li>
+                    <li>Gentle Cleansing Agents such as coco-glucoside, decyl glucoside, or sodium lauroyl sarcosinate, which effectively remove dirt without causing irritation</li>  
+                    <li>Calming Ingredients such as aloevera, chamomile, cucumber extract, or oat extract to help alleviate redness and irritation.</li>      
+                </ul>
+            </div>
+            <div class="essentials">
+                <div class="head-images">
+                    <img src="{% static 'home/images/alovera.jpg' %}" alt="">
+                    <img src="{% static 'home/images/alovera.jpg' %}" alt="">
+                </div>
+                <div class="description">
+                    <p>Cetaphil Gentle Cleanser provides 48 hours of hydration with hydrating glycerin and skin essential vitamins B5 (panthenol) and B3 (niacinamide) and soap free, fragrance free, non foaming.</p></br>
+                    <p>Neutrogena Hydro Boost Water Gel CleanserLeaves skin refreshingly clean and touchable supple every time you cleanse Helps maintain the skin’s moisture barrier.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 </div>
 
 
