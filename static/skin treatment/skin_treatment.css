@@ -1,13 +1,56 @@
 
-
-
 .skin-treatment h1{
     color: #b56231;
     font-size: 40px;
-    margin-bottom: 3rem;
+    margin: 3rem 0px;
+    text-align: center;
+    width: 100%;
 }
-
-
+.skin-treatment h2{
+    color: #b56231;
+    font-size: 30px;
+    margin: 3rem 0px;
+}
+.skin-treatment .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 8rem;
+}
+.skin-treatment h3{
+    color: #b56231;
+    font-size: 30px;
+    margin: 3rem 0px;
+}
+.skin-treatment .facewash .essentials{
+    display: flex;
+    margin: 5rem 0px;
+}
+.skin-treatment .facewash .essentials .head{
+    color: #b56231;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    width: 50%;
+}
+.skin-treatment .facewash .essentials .description{
+    font-size: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.skin-treatment .facewash .essentials .head-images{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+.skin-treatment .facewash .essentials .head-images img{
+    width:40% ;
+    height: 100%;
+}
 
 
 /* footer */
