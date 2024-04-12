@@ -12,12 +12,17 @@ def QuizAPI(request):
     
     data=QuizModel.objects.filter(user=user)
     if(data):
-        data1=data.latest('id')
+        user_data=data.latest('id')
         context={
-            "user":data1.user,
-            "treatment":data1.treatment,
-            "age":data1.age,
-            "skin_type":data1.skin_type
+            "user":user_data.user,
+            "treatment":user_data.treatment,
+            "age":user_data.age,
+            "skin_type":user_data.skin_type,
+            "skin_concerns":user_data.skin_concerns,
+            "react_to_new_products":user_data.react_to_new_products,
+            "sensitive":user_data.sensitive,
+            "sleep_cycle":user_data.sleep_cycle,
+            "skincare_texture":user_data.skincare_texture
         }
         return render(request, 'quiz.html',{"context":context})
     return render(request, 'quiz.html')

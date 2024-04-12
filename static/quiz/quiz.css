@@ -15,6 +15,7 @@
 .quiz h1{
     color: #b56231;
     font-size: 50px;
+    text-align: center;
 }
 .quiz form h2{
     margin-top: 20px;
@@ -48,6 +49,59 @@
     border: none;
     font-size: 16px;
 } 
+
+.skin_analysis {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skin_analysis .analysis {
+    margin: 40px 0px;
+    font-size: 24px;
+}
+.skin_analysis .analysis div{
+    display: flex;
+    margin-top: 10px;
+    gap: 80px;
+}
+.skin_analysis .analysis div .side{
+    width: 350px;
+    color:#b56231 ;
+    padding-left:80px
+    
+}
+
+.skin_analysis .submit{
+    width: 100%;
+    text-align: center;
+}
+.skin_analysis .submit button{
+    padding: 6px;
+    border-radius: 6px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 150px;
+    cursor: pointer;
+    height: 40px;
+    outline: none;
+    background-color: #b56231;
+    color: white;
+    border: none;
+    font-size: 16px;
+}
+.skin_analysis h3{
+    color: #b56231;
+    font-size: 26px;
+}
+.skin_analysis h3 a{
+    text-decoration: none;
+    color: #b56231;
+}
+.skin_analysis h3 a:hover{
+    text-decoration:underline;
+}
 
 /* footer */
 
