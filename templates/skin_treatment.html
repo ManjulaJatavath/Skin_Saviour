@@ -3,6 +3,11 @@
 <div class="skin-treatment">
     <h2>Welcome to skin saviour! {{user}}</h2>
     <h1>MORNING ROUTINE BASED ON YOUR SKIN ANALYSIS</h1>
+    <p>
+        {% for facewash in suggested_facewash %}
+            {{facewash}}
+        {% endfor %}
+    </p>
     <div class="content">
         <div class="facewash">
             <h3>STEP 1 -FACE WASH/CLEANSER:</h3>
@@ -29,6 +34,7 @@
         </div>
         
     </div>
+
 </div>
 
 
