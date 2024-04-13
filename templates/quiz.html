@@ -1,6 +1,7 @@
 {% include 'header.html' %}{% load static %}
 <div id="overlay"><div class="popup" id="popup"></div></div>
-<div class="quiz">
+<div class="quiz" id="quiz">
+    <div class="form-content" id="form-content">
     <h1>Quiz</h1>
     <form id="quiz-form" action="{% url 'save_data' %}" method="POST">
         {% csrf_token %}
@@ -40,6 +41,7 @@
         <label for="ques47" class="ques47">Oil Control</label></br>
         <input type="checkbox" id="ques48" name="skin_concerns" value="Sensitivity and redness" >
         <label for="ques48" class="ques48">Sensitivity and redness</label></br>
+        <!-- <input type="text" style="display:none" required> -->
         <h2>5. How does your skin react to new skincare products?</h2>
         <input type="radio" id="ques51" name="react_to_new_products" value="Gets irritated and red easily" required>
         <label for="ques51" class="ques51">Gets irritated and red easily</label></br>
@@ -71,15 +73,25 @@
         <input type="radio" id="ques83" name="skincare_texture" value="Light Weight" required>
         <label for="ques83" class="ques83">Light Weight</label></br>
         <div  class="submit">
-        <button type="submit">Submit</button>
+        <button type="submit" id="submit-quiz">Submit</button>
         </div>
     </form>
-    <div>
+    </div>
+    <div class="skin_analysis" id="skin_analysis">
         <h1>Quiz analysis</h1>
-        <p>{{context.user}}</p>
-        <p>{{context.treatment}}</p>
-        <p>{{context.age}}</p>
-        <p>{{context.skin_type}}</p>
+        <div class="analysis">
+            <div><span class="side">Skin treatment : </span><span class="exist" id="exist">{{context.treatment}}</span></div>
+            <div><span class="side">Age : </span><span>{{context.age}}</span></div>
+            <div><span class="side">skin concerns : </span><span>{{context.skin_concerns}}</span></div>
+            <div><span class="side">React to new products : </span><span>{{context.react_to_new_products}}</span></div>
+            <div><span class="side">Sensitive : </span><span>{{context.sensitive}}</span></div>
+            <div><span class="side">Sleep cycle : </span><span>{{context.sleep_cycle}}</span></div>
+            <div><span class="side">Skincare texture : </span><span>{{context.skincare_texture}}</span></div>
+        </div>
+        <div class="submit">
+        <button type="button" id="retake">Retake your quiz</button>
+        </div>
+        <h3 classs="last-section">Ready to see your results : <a href="{% url 'skin_treatment' %}">skin treatment</a></h3>
     </div>
 </div>
 
@@ -92,6 +104,7 @@
     </div>
     <div class="content">FOR MORE INFORMATION CONNECT US AT: <a href="https://mail.google.com/mail/">skinsaviour@gmail.com</a></div>
 </div>
+
 
 <script>
     // JavaScript code to display a pop-up message when the form is submitted
@@ -112,4 +125,44 @@
         }, 3000)
 
     });
+
+
+    // Retake quiz
+
+    var retake=document.getElementById("retake")
+    var analysis=document.getElementById("skin_analysis")
+    var quiz=document.getElementById("form-content")
+    var exist=document.getElementById("exist")
+    var quizform=document.getElementById("quiz-form")
+    if(exist.innerHTML){
+        analysis.style.display=""
+        quiz.style.display="none"
+    }
+    else{
+        analysis.style.display="none"
+        quiz.style.display=""
+    }
+    retake.addEventListener("click",()=>{
+        analysis.style.display="none"
+        quiz.style.display=""
+
+    })
+    quizform.addEventListener("submit",()=>{
+        analysis.style.display=""
+        quiz.style.display="none"
+    })
+
+    /* function validateForm() {
+        var hiddenInput = document.querySelector('input[type="text"]');
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        var checked = false;
+        for (var i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].checked) {
+            checked = true;
+            break;
+          }
+        }
+        hiddenInput.setCustomValidity(checked ? '' : 'Please select at least one option.');
+        return checked;
+      } */
 </script>

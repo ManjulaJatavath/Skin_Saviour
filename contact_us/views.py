@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def ContactUsAPI(request):
-    return render(request, 'contact_us.html')
+    return render(request, 'contact_us.html',{'active_tab': 'contact_us'})
 
 def ContactUSData(request):
     if request.method == 'POST':
@@ -31,6 +31,6 @@ def ContactUSData(request):
             feedback=feedback
             )
         feedback_data.save()
-        time.sleep(5)
+        time.sleep(3)
         return redirect('home')  # Redirect to a home page after submission
-    return render(request, 'contact_us.html')
+    return render(request, 'contact_us.html',{'active_tab': 'contact_us'})

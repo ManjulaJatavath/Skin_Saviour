@@ -1,13 +1,89 @@
 
-
-
 .skin-treatment h1{
     color: #b56231;
     font-size: 40px;
-    margin-bottom: 3rem;
+    margin: 3rem 0px;
+    text-align: center;
+    width: 100%;
 }
-
-
+.skin-treatment h2{
+    color: #b56231;
+    font-size: 30px;
+    margin: 3rem 0px;
+}
+.skin-treatment .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 8rem;
+}
+.skin-treatment h3{
+    color: #b56231;
+    font-size: 30px;
+    margin: 3rem 0px;
+}
+.skin-treatment .facewash .essentials,
+.skin-treatment .serum .essentials,
+.skin-treatment .moisturizer .essentials,
+.skin-treatment .sunscreen .essentials{
+    display: flex;
+    margin: 4rem 0px;
+    gap:80px;
+}
+.skin-treatment .facewash .essentials .head,
+.skin-treatment .serum .essentials .head,
+.skin-treatment .moisturizer .essentials .head,
+.skin-treatment .sunscreen .essentials .head{
+    color: #b56231;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 20px;
+}
+/* .skin-treatment .facewash .essentials .head-desc,
+.skin-treatment .serum .essentials .head-desc,
+.skin-treatment .moisturizer .essentials .head-desc,
+.skin-treatment .sunscreen .essentials .head-desc{
+    color: #b56231;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 20px
+} */
+.skin-treatment .facewash .essentials .description,
+.skin-treatment .serum .essentials .description,
+.skin-treatment .moisturizer .essentials .description,
+.skin-treatment .sunscreen .essentials .description{
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.skin-treatment .facewash .essentials .description li,
+.skin-treatment .serum .essentials .description li,
+.skin-treatment .moisturizer .essentials .description li,
+.skin-treatment .sunscreen .essentials .description li{
+    margin-left: 40px;
+}
+.skin-treatment .facewash .essentials .head-images,
+.skin-treatment .serum .essentials .head-images,
+.skin-treatment .moisturizer .essentials .head-images,
+.skin-treatment .sunscreen .essentials .head-images{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+.skin-treatment .facewash .essentials .head-images img,
+.skin-treatment .serum .essentials .head-images img,
+.skin-treatment .moisturizer .essentials .head-images img,
+.skin-treatment .sunscreen .essentials .head-images img{
+    width:40% ;
+    height: 100%;
+    border-radius: 10px;
+}
 
 
 /* footer */

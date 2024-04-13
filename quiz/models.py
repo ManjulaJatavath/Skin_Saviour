@@ -10,7 +10,7 @@ class QuizModel(models.Model):
     skin_concerns = models.CharField(max_length=255)
     react_to_new_products = models.CharField(max_length=255)
     sensitive = models.CharField(max_length=255)
-    sleep_cycle = models.CharField(max_length=255)
+    sleep_cycle = models.CharField(max_length=255, null=True, blank=True)
     skincare_texture = models.CharField(max_length=255)
 
     def __str__(self) -> str:
