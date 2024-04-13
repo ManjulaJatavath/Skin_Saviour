@@ -29,72 +29,72 @@
             {% endfor %}
         </div>
         <div class="serum">
-            {% for facewash in suggested_facewash %}
+            {% for serum in suggested_serum %}
             <h3>STEP 2 -SERUM:</h3>
             <div class="essentials">
                 <div class="head">Essentials:</div>
                     
                     <ul class="description">
                         Opt for serums with
-                        {{facewash.essentials |safe}}
+                        {{serum.essentials |safe}}
                                
                     </ul>
                 </div>
                
                 <div class="essentials">
                     <div class="head-images">
-                        <img src="{{ facewash.image1.url }}" alt="">
-                        <img src="{{ facewash.image2.url }}" alt="">
+                        <img src="{{ serum.image1.url }}" alt="">
+                        <img src="{{ serum.image2.url }}" alt="">
                     </div>
                     <div class="description">
-                        {{facewash.description |safe}}
+                        {{serum.description |safe}}
                     </div>
             </div>
             {% endfor %}
         </div>
         <div class="moisturizer">
-            {% for facewash in suggested_facewash %}
+            {% for moisturizer in suggested_moisturizer %}
             <h3>STEP 3 -MOISTURIZER:</h3>
             <div class="essentials">
                 <div class="head">Essentials:</div>
                     
                     <ul class="description">
                         Opt for moisturizers with
-                        {{facewash.essentials |safe}}
+                        {{moisturizer.essentials |safe}}
                                
                     </ul>
                 </div>
                 
                 <div class="essentials">
                     <div class="head-images">
-                        <img src="{{ facewash.image1.url }}" alt="">
-                        <img src="{{ facewash.image2.url }}" alt="">
+                        <img src="{{ moisturizer.image1.url }}" alt="">
+                        <img src="{{ moisturizer.image2.url }}" alt="">
                     </div>
                     <div class="description">
-                        {{facewash.description |safe}}
+                        {{moisturizer.description |safe}}
                     </div>
             </div>
             {% endfor %}
         </div>
         <div class="sunscreen">
-            {% for facewash in suggested_facewash %}
+            {% for sunscreen in suggested_sunscreen %}
             <h3>STEP 4 -SUNSCREEN:</h3>
             <div class="essentials">
                 <div class="head">Essentials:</div>
                     
                     <ul class="description">
                         Opt for sunscreens with
-                        {{facewash.essentials |safe}}
+                        {{sunscreen.essentials |safe}}
                                
                     </ul>
                 </div>
                 <div class="essentials">
                     <div class="head-images">
-                        <img src="{{ facewash.image1.url }}" alt="">
-                        <img src="{{ facewash.image2.url }}" alt="">
+                        <img src="{{ sunscreen.image1.url }}" alt="">
+                        <img src="{{ sunscreen.image2.url }}" alt="">
                     </div>
                     <div class="description">
-                        {{facewash.description |safe}}
+                        {{sunscreen.description |safe}}
                     </div>
             </div>
             {% endfor %}

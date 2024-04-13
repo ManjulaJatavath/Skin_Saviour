@@ -38,7 +38,7 @@ class SensitiveModel(models.Model):
         return f'{self.senstive}'
 
 class SleepCycleModel(models.Model):
-    sleep_cycle = models.CharField(max_length=255)
+    sleep_cycle = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self) -> str:
         return self.sleep_cycle

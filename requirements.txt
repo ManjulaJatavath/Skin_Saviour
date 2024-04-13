@@ -6,3 +6,8 @@
 
 # for image files:
 #   python -m pip install Pillow 
+
+# for ignoring pycache files:
+#     git rm -r --cached '*.pyc'
+#     git add .
+#     git commit -m "Remove .pyc files from Git repository"
