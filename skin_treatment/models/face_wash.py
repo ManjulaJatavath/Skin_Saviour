@@ -9,7 +9,7 @@ class FaceWashModel(TimeStampedModel):
     skin_type = models.ForeignKey(SkinTypeModel, on_delete=models.CASCADE)
     skin_concern = models.ForeignKey(SkinConernModel, on_delete=models.CASCADE)
     react_to_new_products = models.ForeignKey(ReactToNewProductsModel, on_delete=models.CASCADE)
-    senstive = models.ForeignKey(SensitiveModel, on_delete=models.CASCADE)
+    # senstive = models.ForeignKey(SensitiveModel, on_delete=models.CASCADE)
     sleep_cycle = models.ForeignKey(SleepCycleModel, on_delete=models.CASCADE, blank=True)
     skincare_texture = models.ForeignKey(SkinCareTextureModel, on_delete=models.CASCADE)
     essentials = models.TextField()
@@ -18,7 +18,8 @@ class FaceWashModel(TimeStampedModel):
     description = models.TextField()
 
     def __str__(self):
-        return str([self.essentials, self.image1, self.image2, self.description])
+        # return str([self.essentials, self.image1, self.image2, self.description])
+        return self.skin_type.skin_type
 
     
     class Meta:

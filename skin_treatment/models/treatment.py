@@ -31,11 +31,11 @@ class ReactToNewProductsModel(models.Model):
     def __str__(self) -> str:
         return self.react_to_new_products
     
-class SensitiveModel(models.Model):
-    senstive = models.CharField(max_length=255)
+# class SensitiveModel(models.Model):
+#     senstive = models.CharField(max_length=255)
 
-    def __str__(self) -> str:
-        return f'{self.senstive}'
+#     def __str__(self) -> str:
+#         return f'{self.senstive}'
 
 class SleepCycleModel(models.Model):
     sleep_cycle = models.CharField(max_length=255, null=True, blank=True)

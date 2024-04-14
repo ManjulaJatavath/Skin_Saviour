@@ -9,7 +9,7 @@ class MoisturizerModel(TimeStampedModel):
     skin_type = models.ForeignKey(SkinTypeModel, on_delete=models.CASCADE)
     skin_concern = models.ForeignKey(SkinConernModel, on_delete=models.CASCADE)
     react_to_new_products = models.ForeignKey(ReactToNewProductsModel, on_delete=models.CASCADE)
-    senstive = models.ForeignKey(SensitiveModel, on_delete=models.CASCADE)
+    # senstive = models.ForeignKey(SensitiveModel, on_delete=models.CASCADE)
     sleep_cycle = models.ForeignKey(SleepCycleModel, on_delete=models.CASCADE, blank=True)
     skincare_texture = models.ForeignKey(SkinCareTextureModel, on_delete=models.CASCADE)
     essentials = models.TextField()
