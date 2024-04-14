@@ -21,7 +21,6 @@ def QuizAPI(request):
             "skin_type":data.skin_type,
             "skin_concerns":data.skin_concerns,
             "react_to_new_products":data.react_to_new_products,
-            "sensitive":data.sensitive,
             "sleep_cycle":data.sleep_cycle,
             "skincare_texture":data.skincare_texture,
         }
@@ -38,7 +37,6 @@ def save_data(request):
         skin_type = request.POST.get('skin_type')
         skin_concerns = ','.join(request.POST.getlist('skin_concerns'))
         react_to_new_products = request.POST.get('react_to_new_products')
-        sensitive = request.POST.get('sensitive')
         sleep_cycle = request.POST.get('sleep_cycle')
         skincare_texture = request.POST.get('skincare_texture')
         
@@ -51,7 +49,6 @@ def save_data(request):
                 skin_type=skin_type,
                 skin_concerns=skin_concerns,
                 react_to_new_products=react_to_new_products,
-                sensitive=sensitive,
                 sleep_cycle=sleep_cycle,
                 skincare_texture=skincare_texture
             )
@@ -64,7 +61,6 @@ def save_data(request):
             skin_type=skin_type,
             skin_concerns=skin_concerns,
             react_to_new_products=react_to_new_products,
-            sensitive=sensitive,
             sleep_cycle=sleep_cycle,
             skincare_texture=skincare_texture
         )

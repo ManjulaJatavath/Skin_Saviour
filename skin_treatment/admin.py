@@ -14,14 +14,33 @@ from django.contrib import admin
 
 
 # Register your models here.
-admin.site.register(TreatmentModel)
-admin.site.register(SkinTypeModel)
-admin.site.register(AgeModel)
-admin.site.register(SkinConernModel)
-admin.site.register(ReactToNewProductsModel)
-admin.site.register(SensitiveModel)
-admin.site.register(SleepCycleModel)
-admin.site.register(SkinCareTextureModel)
+# class TreatmentResource(resources.ModelResource):
+#     class Meta:
+#         model = TreatmentModel
+        
+@admin.register(TreatmentModel)
+class TreatmentAdmin(ImportExportModelAdmin):
+    list_display = ['id', 'treatment']
+@admin.register(SkinTypeModel)
+class TreatmentAdmin(ImportExportModelAdmin):
+    list_display = ['id', 'skin_type']
+@admin.register(AgeModel)
+class TreatmentAdmin(ImportExportModelAdmin):
+    list_display = ['id', 'age']
+@admin.register(SkinConernModel)
+class TreatmentAdmin(ImportExportModelAdmin):
+    list_display = ['id', 'skin_concern']
+@admin.register(ReactToNewProductsModel)
+class TreatmentAdmin(ImportExportModelAdmin):
+    list_display = ['id', 'react_to_new_products']
+@admin.register(SleepCycleModel)
+class TreatmentAdmin(ImportExportModelAdmin):
+    list_display = ['id', 'sleep_cycle']
+@admin.register(SkinCareTextureModel)
+class TreatmentAdmin(ImportExportModelAdmin):
+    list_display = ['id', 'skin_texture']
+
+
 
 class FacewashResource(resources.ModelResource):
     treatment = fields.Field(
@@ -54,12 +73,12 @@ class FacewashResource(resources.ModelResource):
         widget=ForeignKeyWidget(FaceWashModel, "react_to_new_products"),
 
     )
-    senstive = fields.Field(
-        column_name='senstive',
-        attribute='senstive',
-        widget=ForeignKeyWidget(FaceWashModel, "senstive"),
+    # senstive = fields.Field(
+    #     column_name='senstive',
+    #     attribute='senstive',
+    #     widget=ForeignKeyWidget(FaceWashModel, "senstive"),
 
-    )
+    # )
     sleep_cycle = fields.Field(
         column_name='sleep_cycle',
         attribute='sleep_cycle',
@@ -76,7 +95,7 @@ class FacewashResource(resources.ModelResource):
         model = FaceWashModel
 @admin.register(FaceWashModel)
 class FacewashAdmin(ImportExportModelAdmin):
-    list_display = ['id','treatment', 'age', 'skin_type', 'skin_concern', 'react_to_new_products', 'senstive', 'sleep_cycle', 'skincare_texture', 'image1', 'image2', 'essentials', ]
+    list_display = ['id','treatment', 'age', 'skin_type', 'skin_concern', 'react_to_new_products', 'sleep_cycle', 'skincare_texture', 'image1', 'image2', 'essentials', ]
     list_filter = ['treatment', 'skin_type']
     resource_class = FacewashResource
 
@@ -111,12 +130,12 @@ class SerumResource(resources.ModelResource):
         widget=ForeignKeyWidget(FaceWashModel, "react_to_new_products"),
 
     )
-    senstive = fields.Field(
-        column_name='senstive',
-        attribute='senstive',
-        widget=ForeignKeyWidget(FaceWashModel, "senstive"),
+    # senstive = fields.Field(
+    #     column_name='senstive',
+    #     attribute='senstive',
+    #     widget=ForeignKeyWidget(FaceWashModel, "senstive"),
 
-    )
+    # )
     sleep_cycle = fields.Field(
         column_name='sleep_cycle',
         attribute='sleep_cycle',
@@ -133,7 +152,7 @@ class SerumResource(resources.ModelResource):
         model = SerumModel
 @admin.register(SerumModel)
 class SerumAdmin(ImportExportModelAdmin):
-    list_display = ['id','treatment', 'age', 'skin_type', 'skin_concern', 'react_to_new_products', 'senstive', 'sleep_cycle', 'skincare_texture', 'image1', 'image2', 'essentials', ]
+    list_display = ['id','treatment', 'age', 'skin_type', 'skin_concern', 'react_to_new_products', 'sleep_cycle', 'skincare_texture', 'image1', 'image2', 'essentials', ]
     list_filter = ['treatment', 'skin_type']
     resource_class = SerumResource
 
@@ -168,12 +187,12 @@ class MoisturizerResource(resources.ModelResource):
         widget=ForeignKeyWidget(FaceWashModel, "react_to_new_products"),
 
     )
-    senstive = fields.Field(
-        column_name='senstive',
-        attribute='senstive',
-        widget=ForeignKeyWidget(FaceWashModel, "senstive"),
+    # senstive = fields.Field(
+    #     column_name='senstive',
+    #     attribute='senstive',
+    #     widget=ForeignKeyWidget(FaceWashModel, "senstive"),
 
-    )
+    # )
     sleep_cycle = fields.Field(
         column_name='sleep_cycle',
         attribute='sleep_cycle',
@@ -190,7 +209,7 @@ class MoisturizerResource(resources.ModelResource):
         model = MoisturizerModel
 @admin.register(MoisturizerModel)
 class MoisturizerAdmin(ImportExportModelAdmin):
-    list_display = ['id','treatment', 'age', 'skin_type', 'skin_concern', 'react_to_new_products', 'senstive', 'sleep_cycle', 'skincare_texture', 'image1', 'image2', 'essentials', ]
+    list_display = ['id','treatment', 'age', 'skin_type', 'skin_concern', 'react_to_new_products', 'sleep_cycle', 'skincare_texture', 'image1', 'image2', 'essentials', ]
     list_filter = ['treatment', 'skin_type']
     resource_class = MoisturizerResource
 
@@ -225,12 +244,12 @@ class SunscreenResource(resources.ModelResource):
         widget=ForeignKeyWidget(FaceWashModel, "react_to_new_products"),
 
     )
-    senstive = fields.Field(
-        column_name='senstive',
-        attribute='senstive',
-        widget=ForeignKeyWidget(FaceWashModel, "senstive"),
+    # senstive = fields.Field(
+    #     column_name='senstive',
+    #     attribute='senstive',
+    #     widget=ForeignKeyWidget(FaceWashModel, "senstive"),
 
-    )
+    # )
     sleep_cycle = fields.Field(
         column_name='sleep_cycle',
         attribute='sleep_cycle',
@@ -247,7 +266,7 @@ class SunscreenResource(resources.ModelResource):
         model = SunscreenModel
 @admin.register(SunscreenModel)
 class SunscreenAdmin(ImportExportModelAdmin):
-    list_display = ['id','treatment', 'age', 'skin_type', 'skin_concern', 'react_to_new_products', 'senstive', 'sleep_cycle', 'skincare_texture', 'image1', 'image2', 'essentials', ]
+    list_display = ['id','treatment', 'age', 'skin_type', 'skin_concern', 'react_to_new_products', 'sleep_cycle', 'skincare_texture', 'image1', 'image2', 'essentials', ]
     list_filter = ['treatment', 'skin_type']
     resource_class = SunscreenResource
 
