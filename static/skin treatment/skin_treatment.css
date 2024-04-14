@@ -95,9 +95,8 @@
     margin-right: 8rem;
     font-size: 20px;
     line-height: 2rem;
-    /* width: 100%; */
 }
-.night-routine .essentials ul{
+.night-routine .steps ul{
     width: 70%;
 }
 .night-routine .subheading{
@@ -109,9 +108,7 @@
     align-items:flex-start;
     margin-left: 25px;
     margin-bottom: 20px;
-    /* justify-content: center; */
-    /* width: 80%; */
-    gap: 20px;
+    gap: 80px;
     width: 100%;
     
 }
@@ -120,7 +117,6 @@
     display: flex;
     color: #b56231;
     font-size: 25px;
-    width: 30%;
 }
 .night-routine .essentials{
     display: flex;
