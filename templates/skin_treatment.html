@@ -1,10 +1,11 @@
 {% include 'header.html' %}{% load static %}
 
 <div class="skin-treatment">
-    <h1>MORNING ROUTINE BASED ON YOUR SKIN ANALYSIS</h1>
-    <h3 class="message">
+    <h3 class="message" id="message">
         {{message}}
     </h3>
+    <div id="morning_routine">
+    <h1>MORNING ROUTINE BASED ON YOUR SKIN ANALYSIS</h1>
     <div class="content">
         <div class="facewash">
             {% for facewash in suggested_facewash %}
@@ -103,8 +104,10 @@
         </div>
         
     </div>
+</div>
+    <div id="night-routine">
     <h1>NIGHT ROUTINE BASED ON YOUR SKIN ANALYSIS</h1>
-    <div class="night-routine">
+    <div class="night-routine" >
         <ul>
             <li>A night skincare routine is essential for maintaining healthy, glowing skin.</li>
             <li>Skincare routine mirrors morning routine, focusing on gentle cleansing, hydration, 
@@ -183,6 +186,7 @@
             
         </div>
     </div>
+</div>
 
 
 
@@ -196,3 +200,20 @@
     </div>
     <div class="content">FOR MORE INFORMATION CONNECT US AT: <a href="https://mail.google.com/mail/">skinsaviour@gmail.com</a></div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded",()=>{
+        var message=document.getElementById("message");
+        var night_routine=document.getElementById("night-routine");
+        var morning_outine=document.getElementById("morning-routine")
+        if(message.innerText){
+            night_routine.style.display="none"
+            morning_routine.style.display="none"
+        }
+        else{
+            night_routine.style.display="block"
+            morning_routine.style.display="block"
+        }
+    })
+
+</script>
