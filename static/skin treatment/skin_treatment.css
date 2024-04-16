@@ -1,4 +1,85 @@
+/* natural products */
+.naturalproducts{
+    margin-right: 5rem;
+    margin-left: 5rem;
+    
+}
 
+.naturalproducts .disclaimer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: #b56231;
+    font-size: 20px;
+    /* font-weight:550; */
+    line-height: 2rem;
+    margin: 1rem;
+}
+.naturalproducts .heading{
+    text-align: center;
+    font-size: 40px;
+    color: #b56231;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.naturalproducts h2{
+    color: #b56231;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 72%;
+
+    
+}
+.naturalproducts .apply{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    line-height: 30px;
+    font-size:20px;
+    gap: 70px;
+}
+.naturalproducts .images img{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+/* .images img{
+    width:150% ;
+    height: 100%;
+    border-radius: 10px;
+} */
+.naturalproducts .benefits h3{
+    color: #b56231;
+    font-size: 30px;
+}
+.naturalproducts .benefits{
+    display: flex;
+    align-items: flex-start;
+    gap: 80px;
+    font-size:20px;
+    margin: 2rem;
+    line-height: 30px;
+}
+.naturalproducts .preparation{
+    display: flex;
+    align-items: flex-start;
+    font-size:20px;
+    line-height: 30px;
+    margin: 1rem;
+    gap: 40px;
+    text-align: justify;
+}
+.naturalproducts .preparation h2{
+    color: #b56231;
+    margin: 0;
+}
+/* conventional products */
 .skin-treatment h1{
     color: #b56231;
     font-size: 40px;

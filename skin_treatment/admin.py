@@ -7,17 +7,34 @@ from skin_treatment.models.face_wash import FaceWashModel
 from skin_treatment.models.serum import SerumModel
 from skin_treatment.models.moisturizer import MoisturizerModel
 from skin_treatment.models.sunscreen import SunscreenModel
+from skin_treatment.models.natural_products_facemask import NaturalProductsFacemaskModel
+from skin_treatment.models.natural_products_facewash import NaturalProductsFacewashModel
+from skin_treatment.models.natural_products_serum import NaturalProductsSerumModel
+from skin_treatment.models.natural_products_moisturizer import NaturalProductsMoisturizerModel
+from skin_treatment.models.natural_products_scrub import NaturalProductsScrubModel
 from django.contrib import admin
 
 # admin.py
-
-
-
-# Register your models here.
-# class TreatmentResource(resources.ModelResource):
-#     class Meta:
-#         model = TreatmentModel
-        
+@admin.register(NaturalProductsFacemaskModel)
+class NaturalProductFacemaskAdmin(ImportExportModelAdmin):
+    list_display = ['treatment', 'facemask1', 'facemask1_image', 'facemask2_image', 'is_active', 'created_at']
+    list_filter = ['treatment', 'facemask1', 'facemask2']
+@admin.register(NaturalProductsFacewashModel)
+class NaturalProductFacewashAdmin(ImportExportModelAdmin):
+    list_display = ['treatment', 'facewash1', 'facewash1_image', 'facewash2_image', 'is_active', 'created_at']
+    list_filter = ['treatment', 'facewash1', 'facewash2']
+@admin.register(NaturalProductsScrubModel)
+class NaturalProductScrubAdmin(ImportExportModelAdmin):
+    list_display = ['treatment', 'scrub1', 'scrub1_image', 'scrub2_image', 'is_active', 'created_at']
+    list_filter = ['treatment', 'scrub1', 'scrub2']
+@admin.register(NaturalProductsMoisturizerModel)
+class NaturalProductMoisturizerAdmin(ImportExportModelAdmin):
+    list_display = ['treatment', 'moisturizer1', 'moisturizer1_image', 'moisturizer2_image', 'is_active', 'created_at']
+    list_filter = ['treatment', 'moisturizer1', 'moisturizer2']
+@admin.register(NaturalProductsSerumModel)
+class NaturalProductSerumAdmin(ImportExportModelAdmin):
+    list_display = ['treatment', 'serum1', 'serum1_image', 'serum2_image', 'is_active', 'created_at']
+    list_filter = ['treatment', 'serum1', 'serum2']
 @admin.register(TreatmentModel)
 class TreatmentAdmin(ImportExportModelAdmin):
     list_display = ['id', 'treatment']

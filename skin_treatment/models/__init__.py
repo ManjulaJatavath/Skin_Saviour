@@ -3,3 +3,8 @@ from .face_wash import FaceWashModel
 from .moisturizer import MoisturizerModel
 from .sunscreen import SunscreenModel
 from .serum import SerumModel
+from .natural_products_facewash import NaturalProductsFacewashModel
+from .natural_products_serum import NaturalProductsSerumModel
+from .natural_products_moisturizer import NaturalProductsMoisturizerModel
+from .natural_products_scrub import NaturalProductsScrubModel
+from .natural_products_facemask import NaturalProductsFacemaskModel

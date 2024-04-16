@@ -1,5 +1,193 @@
 {% include 'header.html' %}{% load static %}
 
+<div class="naturalproducts">
+    <div class="disclaimer">
+        <p>
+             When using these ingredients , it's important to patch test first, especially if you have sensitive skin, to make sure you don't have any adverse reactions. Additionally, remember that natural products may not lather or feel the same as conventional cleansers, but they can still effectively cleanse the skin.
+        </p>
+    </div>
+    {% for facewash in facewash %}
+        <div class="heading">
+            {{facewash.facewash1 |safe}}<br>
+        </div>
+        <h2>HOW TO APPLY:</h2>
+        <div class="apply">
+            <div class="images">
+                <img src="{{ facewash.facewash1_image.url }}" alt=""><br>
+            </div>
+            {{facewash.facewash1_application |safe}}<br>
+        </div>
+        <div class="benefits">
+            <h3>BENEFITS:</h3>
+            <ul>
+                {{facewash.facewash1_benefits |safe}}<br>
+            </ul>
+        </div>
+        <div class="heading">
+            {{facewash.facewash2 |safe}}<br>
+        </div>
+        <h2>HOW TO APPLY:</h2>
+        <div class="apply">
+            <div class="images">
+                <img src="{{ facewash.facewash2_image.url }}" alt="">
+            </div>
+            {{facewash.facewash2_application |safe}}<br>
+        </div>
+        <div class="benefits">
+            <h3>BENEFITS:</h3>
+            <ul>
+                {{facewash.facewash2_benefits |safe}}<br>
+            </ul>
+        </div>
+        
+        {% endfor %}
+        {% for serum in serum %}
+        <div class="heading">
+            {{serum.serum1 |safe}}
+        </div>
+        <h2>HOW TO APPLY:</h2>
+        <div class="apply">
+            <div class="images">
+                <img src="{{ serum.serum1_image.url }}" alt="">
+            </div>
+            {{serum.serum1_application |safe}}
+        </div>
+        <div class=benefits>
+            <h3>BENEFITS:</h3>
+            <ul>
+                {{serum.serum1_benefits |safe}}
+            </ul>
+        </div>
+        <div class="heading">
+            {{serum.serum2 |safe}}
+        </div>
+        <h2>HOW TO APPLY:</h2>
+        <div class="apply">
+            <div class="images">
+                <img src="{{ serum.serum2_image.url }}" alt="">
+            </div>
+            {{serum.serum2_application |safe}}
+        </div>
+        <div class="benefits">
+            <h3>BENEFITS:</h3>
+            <ul>
+                {{serum.serum2_benefits |safe}}
+            </ul>
+        </div>
+        {% endfor %}
+        {% for moisturizer in moisturizer%}
+        <div class="heading">
+            {{moisturizer.moisturizer1 |safe}}
+        </div>
+        <h2>HOW TO APPLY:</h2>
+        <div class="apply">
+            <div class="images">
+                <img src="{{ moisturizer.moisturizer1_image.url }}" alt="">
+            </div>
+            {{moisturizer.moisturizer1_application |safe}}
+        </div>
+        <div class=benefits>
+            <h3>BENEFITS:</h3>
+            <ul>
+                {{moisturizer.moisturizer1_benefits |safe}}
+            </ul>
+        </div>
+        <div class="heading">
+            {{moisturizer.moisturizer2 |safe}}
+        </div>
+        <h2>HOW TO APPLY:</h2>
+        <div class="apply">
+            <div class="images">
+                <img src="{{ moisturizer.moisturizer2_image.url }}" alt="">
+            </div>
+            {{moisturizer.moisturizer2_application |safe}}
+        </div>
+        <div class="benefits">
+            <h3>BENEFITS:</h3>
+            <ul>
+                {{moisturizer.moisturizer2_benefits |safe}}
+            </ul>
+        </div>
+        {% endfor %}
+        {% for scrub in scrub %}
+        <div class="heading">
+            {{scrub.scrub1 |safe}}
+        </div>
+        <div class="preparation">
+            <h2>PREPARATION:</h2>
+            {{scrub.scrub1_preperation |safe}}
+        </div>
+        <h2>HOW TO APPLY:</h2>
+        <div class="apply">
+            <div class="images">
+                <img src="{{ scrub.scrub1_image.url }}" alt="">
+            </div>
+            {{scrub.scrub1_application |safe}}
+        </div>
+        <div class=benefits>
+            <h3>BENEFITS:</h3>
+            <ul>
+                {{scrub.scrub1_benefits |safe}}
+            </ul>
+        </div>
+        <div class="heading">
+            {{scrub.scrub2 |safe}}
+        </div>
+        <div class="preparation">
+            <h2>PREPARATION:</h2>
+            {{scrub.scrub2_preperation |safe}}
+        </div>
+        <h2>HOW TO APPLY:</h2>
+        <div class="apply">
+            <div class="images">
+                <img src="{{ scrub.scrub2_image.url }}" alt="">
+            </div>
+            {{scrub.scrub2_application |safe}}
+        </div>
+        <div class="benefits">
+            <h3>BENEFITS:</h3>
+            <ul>
+                {{scrub.scrub2_benefits |safe}}
+            </ul>
+        </div>
+        {% endfor %}
+        {% for facemask in facemask %}
+        <div class="heading">
+            {{facemask.facemask1 |safe}}
+        </div>
+        <h2>HOW TO APPLY:</h2>
+        <div class="apply">
+            <div class="images">
+                <img src="{{ facemask.facemask1_image.url }}" alt="">
+            </div>
+            {{facemask.facemask1_application |safe}}
+        </div>
+        <div class=benefits>
+            <h3>BENEFITS:</h3>
+            <ul>
+                {{facemask.facemask1_benefits |safe}}
+            </ul>
+        </div>
+        <div class="heading">
+            {{facemask.facemask2 |safe}}
+        </div>
+        <h2>HOW TO APPLY:</h2>
+    <div class="apply">
+        <div class="images">
+            <img src="{{ facemask.facemask2_image.url }}" alt="">
+        </div>
+        {{facemask.facemask2_application |safe}}
+    </div>
+    <div class="benefits">
+        <h3>BENEFITS:</h3>
+        <ul>
+            {{facemask.facemask2_benefits |safe}}
+        </ul>
+    </div>
+    {% endfor %}
+
+</div>
+
 <div class="skin-treatment">
     <h3 class="message" id="message">
         {{message}}

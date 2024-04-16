@@ -5,6 +5,11 @@ from skin_treatment.models.face_wash import FaceWashModel
 from skin_treatment.models.serum import SerumModel
 from skin_treatment.models.moisturizer import MoisturizerModel
 from skin_treatment.models.sunscreen import SunscreenModel
+from skin_treatment.models.natural_products_facewash import NaturalProductsFacewashModel
+from skin_treatment.models.natural_products_serum import NaturalProductsSerumModel
+from skin_treatment.models.natural_products_moisturizer import NaturalProductsMoisturizerModel
+from skin_treatment.models.natural_products_scrub import NaturalProductsScrubModel
+from skin_treatment.models.natural_products_facemask import NaturalProductsFacemaskModel
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -30,47 +35,51 @@ def SkinTreatmentAPI(request):
                         data.react_to_new_products='Adapts Well'
                         data.skincare_texture='Light Weight'
                         data.skin_type='Combination(Oily at T junction and Dry at cheeks)'
-            suggested_facewash = FaceWashModel.objects.filter(
-                treatment__treatment=data.treatment,
-                age__age=data.age,
-                skin_type__skin_type=data.skin_type,
-                skin_concern__skin_concern=data.skin_concerns,
-                react_to_new_products__react_to_new_products=data.react_to_new_products,
-                skincare_texture__skin_texture=data.skincare_texture,
-                    )
-            suggested_serum = SerumModel.objects.filter(
-                treatment__treatment=data.treatment,
-                age__age=data.age,
-                skin_type__skin_type=data.skin_type,
-                skin_concern__skin_concern=data.skin_concerns,
-                react_to_new_products__react_to_new_products=data.react_to_new_products,
-                skincare_texture__skin_texture=data.skincare_texture,
-                    )
-            suggested_moisturizer = MoisturizerModel.objects.filter(
-                treatment__treatment=data.treatment,
-                age__age=data.age,
-                skin_type__skin_type=data.skin_type,
-                skin_concern__skin_concern=data.skin_concerns,
-                react_to_new_products__react_to_new_products=data.react_to_new_products,
-                skincare_texture__skin_texture=data.skincare_texture,
-                    )
-            suggested_sunscreen = SunscreenModel.objects.filter(
-                treatment__treatment=data.treatment,
-                age__age=data.age,
-                skin_type__skin_type=data.skin_type,
-                skin_concern__skin_concern=data.skin_concerns,
-                react_to_new_products__react_to_new_products=data.react_to_new_products,
-                skincare_texture__skin_texture=data.skincare_texture,
-                    )
-            if data.treatment=="Conventional Products":
-                  if not suggested_facewash :
-                        suggested_facewash = FaceWashModel.objects.filter(id=2)
-                  if not suggested_serum :
-                        suggested_serum = SerumModel.objects.filter(id=2)
-                  if not suggested_moisturizer :
-                        suggested_moisturizer = MoisturizerModel.objects.filter(id=2)
-                  if not suggested_sunscreen :
-                        suggested_sunscreen = SunscreenModel.objects.filter(id=2)
-            return render(request, 'skin_treatment.html', {'suggested_facewash': suggested_facewash,'active_tab': 'skin_treatment', 'suggested_serum': suggested_serum, 'suggested_moisturizer': suggested_moisturizer, 'suggested_sunscreen': suggested_sunscreen, 'skin_type':data}) 
+                  elif data.age=='25-40' or data.skin_concerns=='Wrinkles/Open pores':
+                        suggested_serum = SerumModel.objects.filter(id=6)
+                        data.age='< 25'
+                  else:
+                        suggested_serum = SerumModel.objects.filter(
+                        treatment__treatment=data.treatment,
+                        age__age=data.age,
+                        skin_type__skin_type=data.skin_type,
+                        skin_concern__skin_concern=data.skin_concerns,
+                        react_to_new_products__react_to_new_products=data.react_to_new_products,
+                        skincare_texture__skin_texture=data.skincare_texture,
+                            )
+
+                  suggested_facewash = FaceWashModel.objects.filter(
+                    treatment__treatment=data.treatment,
+                    age__age=data.age,
+                    skin_type__skin_type=data.skin_type,
+                    skin_concern__skin_concern=data.skin_concerns,
+                    react_to_new_products__react_to_new_products=data.react_to_new_products,
+                    skincare_texture__skin_texture=data.skincare_texture,
+                        )
+                  suggested_moisturizer = MoisturizerModel.objects.filter(
+                    treatment__treatment=data.treatment,
+                    age__age=data.age,
+                    skin_type__skin_type=data.skin_type,
+                    skin_concern__skin_concern=data.skin_concerns,
+                    react_to_new_products__react_to_new_products=data.react_to_new_products,
+                    skincare_texture__skin_texture=data.skincare_texture,
+                        )
+                  suggested_sunscreen = SunscreenModel.objects.filter(
+                    treatment__treatment=data.treatment,
+                    age__age=data.age,
+                    skin_type__skin_type=data.skin_type,
+                    skin_concern__skin_concern=data.skin_concerns,
+                    react_to_new_products__react_to_new_products=data.react_to_new_products,
+                    skincare_texture__skin_texture=data.skincare_texture,
+                        )
+
+                  return render(request, 'skin_treatment.html', {'suggested_facewash': suggested_facewash,'active_tab': 'skin_treatment', 'suggested_serum': suggested_serum, 'suggested_moisturizer': suggested_moisturizer, 'suggested_sunscreen': suggested_sunscreen, 'skin_type':data}) 
+            elif data.treatment=='Natural Products':
+                  facewash = NaturalProductsFacewashModel.objects.all()
+                  serum = NaturalProductsSerumModel.objects.all()
+                  moisturizer = NaturalProductsMoisturizerModel.objects.all()
+                  scrub = NaturalProductsScrubModel.objects.all()
+                  facemask = NaturalProductsFacemaskModel.objects.all()
+                  return render(request, 'skin_treatment.html', {'facewash': facewash, 'serum':serum, 'moisturizer':moisturizer, 'scrub':scrub, 'facemask':facemask})
        return render(request, 'skin_treatment.html',{'active_tab': 'skin_treatment', 'message': 'PLEASE TAKE YOUR QUIZ TO GET YOUR TREATMENT'})  
 
