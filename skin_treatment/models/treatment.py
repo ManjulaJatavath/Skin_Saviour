@@ -1,50 +1,67 @@
 from django.db import models
+from utils.helpers.timestamp_model import TimeStampedModel
 
-class TreatmentModel(models.Model):
+class TreatmentModel(TimeStampedModel):
     treatment = models.CharField(max_length=255)
 
 
     def __str__(self) -> str:
         return self.treatment
+    
+    class Meta:
+        ordering = ['id']
 
-class SkinTypeModel(models.Model):
+class SkinTypeModel(TimeStampedModel):
     skin_type = models.CharField(max_length=255)
 
     def __str__(self) -> str:
         return self.skin_type
     
-class AgeModel(models.Model):
+    class Meta:
+        ordering = ['id']
+    
+class AgeModel(TimeStampedModel):
     age = models.CharField(max_length=255)
 
     def __str__(self) -> str:
         return self.age
+    
+    class Meta:
+        ordering = ['id']
 
-class SkinConernModel(models.Model):
+class SkinConernModel(TimeStampedModel):
     skin_concern = models.CharField(max_length=255)
 
     def __str__(self) -> str:
         return self.skin_concern
     
-class ReactToNewProductsModel(models.Model):
+    class Meta:
+        ordering = ['id']
+    
+class ReactToNewProductsModel(TimeStampedModel):
     react_to_new_products = models.CharField(max_length=255)
 
     def __str__(self) -> str:
         return self.react_to_new_products
     
-# class SensitiveModel(models.Model):
-#     senstive = models.CharField(max_length=255)
+    class Meta:
+        ordering = ['id']
+        
 
-#     def __str__(self) -> str:
-#         return f'{self.senstive}'
-
-class SleepCycleModel(models.Model):
+class SleepCycleModel(TimeStampedModel):
     sleep_cycle = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self) -> str:
         return self.sleep_cycle
     
-class SkinCareTextureModel(models.Model):
+    class Meta:
+        ordering = ['id']
+
+class SkinCareTextureModel(TimeStampedModel):
     skin_texture = models.CharField(max_length=255)
 
     def __str__(self) -> str:
         return self.skin_texture
+    
+    class Meta:
+        ordering = ['id']

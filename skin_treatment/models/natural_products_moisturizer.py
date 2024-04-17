@@ -16,3 +16,6 @@ class NaturalProductsMoisturizerModel(TimeStampedModel):
 
     def __str__(self) -> str:
         return self.treatment.treatment
+    
+    class Meta:
+        ordering = ['id']
