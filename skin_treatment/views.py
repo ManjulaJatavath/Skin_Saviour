@@ -26,7 +26,7 @@ def SkinTreatmentAPI(request):
                         data.react_to_new_products='Adapts Well'
                         data.skincare_texture='Gel'
                         data.skin_type='Oily'
-                  elif data.skin_concerns=='Dry Patches' or data.skin_concerns=='Dehydration/ Breakouts' or data.react_to_new_products=='Breaks out':
+                  elif data.skin_concerns=='Dry Patches' or data.react_to_new_products=='Breaks out':
                         data.skin_concerns='Dehydration/ Breakouts'
                         data.react_to_new_products='Adapts Well'
                         data.skin_type='Dry'
