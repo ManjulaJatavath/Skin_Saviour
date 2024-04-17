@@ -1,7 +1,7 @@
 {% include 'header.html' %}{% load static %}
 
 <div class="naturalproducts">
-    <div class="disclaimer">
+    <div class="disclaimer" id="disclaimer">
         <p>
              When using these ingredients , it's important to patch test first, especially if you have sensitive skin, to make sure you don't have any adverse reactions. Additionally, remember that natural products may not lather or feel the same as conventional cleansers, but they can still effectively cleanse the skin.
         </p>
@@ -393,14 +393,15 @@
     document.addEventListener("DOMContentLoaded",()=>{
         var message=document.getElementById("message");
         var night_routine=document.getElementById("night-routine");
-        var morning_outine=document.getElementById("morning-routine")
+        var disclaimer=document.getElementById("disclaimer");
+
         if(message.innerText){
             night_routine.style.display="none"
-            morning_routine.style.display="none"
+            disclaimer.style.display="none"
         }
         else{
             night_routine.style.display="block"
-            morning_routine.style.display="block"
+            disclaimer.style.display="block"
         }
     })
 
