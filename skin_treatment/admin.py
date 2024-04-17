@@ -15,12 +15,45 @@ from skin_treatment.models.natural_products_serum import NaturalProductsSerumMod
 from skin_treatment.models.natural_products_moisturizer import NaturalProductsMoisturizerModel
 from skin_treatment.models.natural_products_scrub import NaturalProductsScrubModel
 from django.contrib import admin
+from django.utils.html import format_html
 
 # admin.py
 @admin.register(NaturalProductsFacemaskModel)
 class NaturalProductFacemaskAdmin(ImportExportModelAdmin):
-    list_display = ['treatment', 'facemask1', 'facemask1_image', 'facemask2_image', 'is_active', 'created_at']
+    list_display = ['treatment', 'facemask1', 'display_facemask1_image', 'display_facemask2_image', 'is_active', 'created_at']
     list_filter = ['treatment', 'facemask1', 'facemask2']
+
+    @admin.display(description="facemask1_image")
+    def display_facemask1_image(self, obj):
+        """
+        Display the logo for the given object.
+
+        Parameters:
+            self (object): The instance of the class.
+            obj (object): The object for which the logo is to be displayed.
+
+        Returns:
+            str: The HTML for the logo image, or 'No Image' if no logo is available.
+        """
+        if obj.facemask1_image:
+            return format_html(f'<img src="{obj.facemask1_image.url}" width="50" height="50" />')
+        return "No Image"
+    
+    @admin.display(description="facemask2_image")
+    def display_facemask2_image(self, obj):
+        """
+        Display the logo for the given object.
+
+        Parameters:
+            self (object): The instance of the class.
+            obj (object): The object for which the logo is to be displayed.
+
+        Returns:
+            str: The HTML for the logo image, or 'No Image' if no logo is available.
+        """
+        if obj.facemask2_image:
+            return format_html(f'<img src="{obj.facemask2_image.url}" width="50" height="50" />')
+        return "No Image"
 
 
 @admin.register(NaturalProductsFacewashModel)
