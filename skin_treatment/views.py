@@ -21,12 +21,15 @@ def SkinTreatmentAPI(request):
             if data.treatment=="Conventional Products":
                   if data.skin_concerns== 'Sensitivity and redness' or data.react_to_new_products=='Gets irritated and red easily':
                         data.skin_type='Sensitive'
+                        data.skin_concerns='Sensitivity and redness'
+                        data.react_to_new_products='Gets irritated and red easily'
+                        data.skincare_texture='Gel'
                   elif data.skin_concerns=='Active Acne':
                         data.skin_concerns='Oil Control'
                         data.react_to_new_products='Adapts Well'
                         data.skincare_texture='Gel'
                         data.skin_type='Oily'
-                  elif data.skin_concerns=='Dry Patches' or data.react_to_new_products=='Breaks out':
+                  elif data.skin_concerns=='Dry Patches'  or  data.react_to_new_products=='Breaks out' and data.skincare_texture=='Cream':
                         data.skin_concerns='Dehydration/ Breakouts'
                         data.react_to_new_products='Adapts Well'
                         data.skin_type='Dry'
