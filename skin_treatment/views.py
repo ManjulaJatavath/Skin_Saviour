@@ -43,7 +43,6 @@ def SkinTreatmentAPI(request):
                         data.skincare_texture='Light Weight'
                         data.skin_type='Combination(Oily at T junction and Dry at cheeks)'
                         data.skin_concerns='Acne Marks'
-
                   if not suggested_serum:
                         suggested_serum = SerumModel.objects.filter(
                         treatment__treatment=data.treatment,
