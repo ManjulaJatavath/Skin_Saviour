@@ -18,7 +18,11 @@ def SkinTreatmentAPI(request):
        user=request.user
        if QuizModel.objects.filter(user=user):
             data = QuizModel.objects.filter(user=user).first()
-            if data.treatment=="Conventional Products":
+            if data.treatment=='Conventional Products':
+                  suggested_serum=''
+                  if data.age=='25-40' or data.skin_concerns=='Wrinkles/Open pores':
+                        suggested_serum = SerumModel.objects.filter(id=6)
+                        data.age='< 25'
                   if data.skin_concerns== 'Sensitivity and redness' or data.react_to_new_products=='Gets irritated and red easily' or data.skin_type=='Sensitive':
                         data.skin_type='Sensitive'
                         data.skin_concerns='Sensitivity and redness'
@@ -29,7 +33,7 @@ def SkinTreatmentAPI(request):
                         data.react_to_new_products='Adapts Well'
                         data.skincare_texture='Gel'
                         data.skin_type='Oily'
-                  elif data.skin_concerns=='Dry Patches'  or  data.react_to_new_products=='Breaks out' and data.skincare_texture=='Cream':
+                  elif data.skin_concerns=='Dry Patches'  or  data.react_to_new_products=='Breaks out' and data.skincare_texture=='Cream' or data.skin_concerns=='Wrinkles/Open pores':
                         data.skin_concerns='Dehydration/ Breakouts'
                         data.react_to_new_products='Adapts Well'
                         data.skin_type='Dry'
@@ -40,10 +44,7 @@ def SkinTreatmentAPI(request):
                         data.skin_type='Combination(Oily at T junction and Dry at cheeks)'
                         data.skin_concerns='Acne Marks'
 
-                  if data.age=='25-40' or data.skin_concerns=='Wrinkles/Open pores':
-                        suggested_serum = SerumModel.objects.filter(id=6)
-                        data.age='< 25'
-                  else:
+                  if not suggested_serum:
                         suggested_serum = SerumModel.objects.filter(
                         treatment__treatment=data.treatment,
                         age__age=data.age,
@@ -52,11 +53,6 @@ def SkinTreatmentAPI(request):
                         react_to_new_products__react_to_new_products=data.react_to_new_products,
                         skincare_texture__skin_texture=data.skincare_texture,
                             )
-                  if data.skin_concerns=='Wrinkles/Open pores':
-                        data.skin_concerns='Dehydration/ Breakouts'
-                        data.react_to_new_products='Adapts Well'
-                        data.skin_type='Dry'
-                        data.skincare_texture='Cream'
 
                   suggested_facewash = FaceWashModel.objects.filter(
                     treatment__treatment=data.treatment,
