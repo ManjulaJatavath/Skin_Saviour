@@ -19,12 +19,12 @@ def SkinTreatmentAPI(request):
        if QuizModel.objects.filter(user=user):
             data = QuizModel.objects.filter(user=user).first()
             if data.treatment=="Conventional Products":
-                  if data.skin_concerns== 'Sensitivity and redness' or data.react_to_new_products=='Gets irritated and red easily':
+                  if data.skin_concerns== 'Sensitivity and redness' or data.react_to_new_products=='Gets irritated and red easily' or data.skin_type=='Sensitive':
                         data.skin_type='Sensitive'
                         data.skin_concerns='Sensitivity and redness'
                         data.react_to_new_products='Gets irritated and red easily'
                         data.skincare_texture='Gel'
-                  elif data.skin_concerns=='Active Acne':
+                  elif data.skin_concerns=='Active Acne' or data.skin_concerns=="Oil Control":
                         data.skin_concerns='Oil Control'
                         data.react_to_new_products='Adapts Well'
                         data.skincare_texture='Gel'
@@ -34,10 +34,12 @@ def SkinTreatmentAPI(request):
                         data.react_to_new_products='Adapts Well'
                         data.skin_type='Dry'
                         data.skincare_texture='Cream'
-                  elif data.skin_concerns=='Acne Marks' :
+                  elif data.skin_concerns=='Acne Marks' or data.skin_concerns=='Hyper Pigmentation':
                         data.react_to_new_products='Adapts Well'
                         data.skincare_texture='Light Weight'
                         data.skin_type='Combination(Oily at T junction and Dry at cheeks)'
+                        data.skin_concerns='Acne Marks'
+
                   if data.age=='25-40' or data.skin_concerns=='Wrinkles/Open pores':
                         suggested_serum = SerumModel.objects.filter(id=6)
                         data.age='< 25'
@@ -50,6 +52,11 @@ def SkinTreatmentAPI(request):
                         react_to_new_products__react_to_new_products=data.react_to_new_products,
                         skincare_texture__skin_texture=data.skincare_texture,
                             )
+                  if data.skin_concerns=='Wrinkles/Open pores':
+                        data.skin_concerns='Dehydration/ Breakouts'
+                        data.react_to_new_products='Adapts Well'
+                        data.skin_type='Dry'
+                        data.skincare_texture='Cream'
 
                   suggested_facewash = FaceWashModel.objects.filter(
                     treatment__treatment=data.treatment,
@@ -75,6 +82,12 @@ def SkinTreatmentAPI(request):
                     react_to_new_products__react_to_new_products=data.react_to_new_products,
                     skincare_texture__skin_texture=data.skincare_texture,
                         )
+                  if not (suggested_facewash and suggested_moisturizer and suggested_serum and suggested_sunscreen):
+                        suggested_facewash=FaceWashModel.objects.filter(id='2')
+                        suggested_moisturizer=MoisturizerModel.objects.filter(id='2')
+                        suggested_serum=SerumModel.objects.filter(id='2')
+                        suggested_sunscreen=SunscreenModel.objects.filter(id='2')
+                        
 
                   return render(request, 'skin_treatment.html', {'suggested_facewash': suggested_facewash,'active_tab': 'skin_treatment', 'suggested_serum': suggested_serum, 'suggested_moisturizer': suggested_moisturizer, 'suggested_sunscreen': suggested_sunscreen, 'skin_type':data}) 
             elif data.treatment=='Natural Products':
