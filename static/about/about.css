@@ -79,3 +79,36 @@
     width: 30px;
 
 }
+
+@media (max-width:1200px){
+    .about .division2{
+        flex-direction: column;
+    }
+    .about .division2 img{
+        width: 500px;
+        height: 400px;
+    }
+    .about{
+        margin: 3rem 5rem;
+    }
+}
+@media (max-width:800px){
+    .about .division2 img{
+        width: 300px;
+        height: 300px;
+    }
+}
+@media (max-width:500px){
+    .about{
+
+        margin: 3rem 2rem;
+    }
+    .about .division2 img{
+        width: 250px;
+        height: 250px;
+    }
+    .division4 .heading{
+        font-size: 22px;
+        line-height: 30px;
+    }
+}
