@@ -50,13 +50,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 5rem;
     margin-bottom: 5rem;
     gap:60px 20px;
 }
 .tips .section2 .card{
-    width: 400px;
+    width: 500px;
     padding-bottom: 10px;
     transition: transform  linear 0.4s;
 }
@@ -65,7 +65,7 @@
     box-shadow: 2px 2px 6px  #cb7645;
 }
 .tips .section2 .card img{
-    width: 400px;
+    width: 500px;
     border-radius: 40px;
     height: 400px;
     padding: 20px;
@@ -281,4 +281,34 @@
 .tips .section9 div p{
    width: 65%;
    font-size: 18px;
+}
+@media (max-width:1740px){
+    .tips .section2 {
+        justify-content: space-around;
+    }
+    .tips .section2{
+        gap: 60px 0px;
+    }
+    .tips .section2 .card{
+        width: 33%;
+    }
+    .tips .section2 .card img{
+        width: 90%;
+    }
+}
+
+@media (max-width:1080px){
+    
+    .tips .section2{
+        gap: 20px 0px;
+    }
+    .tips .section2 .card{
+        width: 50%;
+    }
+    .tips .section2 .card img{
+        width: 90%;
+        height: 300px;
+    
+    }
+    
 }
