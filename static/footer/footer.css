@@ -6,6 +6,10 @@
     height: 100px;
     gap: 10px;
     font-weight: 500;
+    
+}
+.footer-container .content{
+    text-align: center;
 }
 .footer-container .content a{
     text-decoration: none;

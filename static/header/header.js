@@ -22,7 +22,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     document.addEventListener("click",()=>{
       var element=document.getElementById("dropdown");
+      var element1=document.getElementById("dropdown1");
+      var ham_content1=document.getElementById("tabs-hamburger");
+      ham_content1,style.display="none";
       element.style.display="none";
+      element1.style.display="none";
     })
 });
 
@@ -30,9 +34,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
 // profile dropdown
 
 var dropdown=document.getElementById("profile");
+var dropdown1=document.getElementById("profile1");
 dropdown.addEventListener("click",(event)=>{
   event.stopPropagation()
   var element=document.getElementById("dropdown");
+  if(element.style.display=="block"){
+    element.style.display="none";
+  }
+  else{
+    element.style.display="block";
+  }
+  
+})
+dropdown1.addEventListener("click",(event)=>{
+  event.stopPropagation()
+  var element=document.getElementById("dropdown1");
   if(element.style.display=="block"){
     element.style.display="none";
   }
@@ -71,3 +87,19 @@ function logout(event){
         clearInterval(timerInterval);
     }, 3000)
 }
+
+
+// Hamburger
+
+var hamburger=document.getElementById("hamburger");
+var ham_content=document.getElementById("tabs-hamburger");
+
+hamburger.addEventListener("click",(event)=>{
+  event.stopPropagation()
+  if(ham_content.style.display=="none"){
+    ham_content.style.display="block";
+  }
+  else{
+    ham_content.style.display="none";
+  }
+})
