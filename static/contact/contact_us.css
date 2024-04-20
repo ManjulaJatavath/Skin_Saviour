@@ -72,7 +72,21 @@
     border: none;
     font-size: 16px;
 }
-
+@media (max-width:500px){
+    
+.contact form {
+    width: 80%;
+    padding: 1.5rem;
+}
+.contact form #name,.contact form #feedback {
+    width: 240px;
+}
+}
+@media (max-width:350px){
+.contact form #name,.contact form #feedback {
+    width: 200px;
+}
+}
 
 /* footer */
 

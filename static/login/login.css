@@ -17,7 +17,7 @@
 .login form{
     box-shadow: 1px 1px 8px 2px gray;
     margin: 2rem;
-    width: 30%;
+    width: 600px;
     border-radius: 6px;
     padding: 50px;
 }
@@ -89,4 +89,38 @@
     background-color: rgba(0, 0, 0, 0.5); 
     z-index: 99; 
     display: none; 
+}
+@media (max-width:650px){
+    .login form {
+        width: 80%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+    }
+    .login form label {
+        font-size: 24px;
+        width: 90%;
+        line-height: 30px;
+        margin-right: 0px;
+        text-align: left;
+        margin-top: 20px;
+    }
+    .login form input{
+        width: 80%;
+        margin-left: 40px;
+        margin-top: 0px;
+    }
+
+}
+@media (max-width:430px){
+    .login form {
+        width: 90%;
+    }
+    
+    .login form input{
+        width: 90%;
+        margin-left: 20px
+    }
+
 }

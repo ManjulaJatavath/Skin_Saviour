@@ -94,6 +94,7 @@
 .skin_analysis h3{
     color: #b56231;
     font-size: 26px;
+    text-align: center;
 }
 .skin_analysis h3 a{
     text-decoration: none;
@@ -133,4 +134,43 @@
     justify-content: center;
     align-items: center;
     width: 30px;
+}
+@media (max-width:1200px){
+    .quiz .form-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .quiz form{
+        width: 85%;
+
+    }
+}
+
+@media (max-width:700px){
+    .quiz form h2 {
+        font-size: 22px;
+    }
+}
+@media (max-width:650px){
+    .skin_analysis .analysis div .side {
+        padding-left: 10%;
+        width: 230px;
+    }
+}
+@media (max-width:530px){
+    .skin_analysis .analysis div .side {
+        padding-left: 0px;
+        width: 100%;
+        font-size: 30px;
+    }
+    .skin_analysis .analysis div .exist {
+        padding-left: 28px;
+    }
+    .skin_analysis .analysis div{
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
 }
