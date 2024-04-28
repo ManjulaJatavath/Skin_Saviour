@@ -86,9 +86,9 @@ WSGI_APPLICATION = 'SkinSaviour.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Skin-Saviour',
+        'NAME': 'skin-saviour',
         'USER' : 'postgres',
-        'PASSWORD':'Gowri262212@',
+        'PASSWORD':'Manjula',
         'HOST':'localhost',
         'PORT':'5432'
     }
