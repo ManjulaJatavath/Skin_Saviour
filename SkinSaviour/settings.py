@@ -90,7 +90,7 @@ DATABASES = {
         'USER' : 'postgres',
         'PASSWORD':'Manjula',
         'HOST':'localhost',
-        'PORT':'5432'
+        'PORT':'5433'
     }
 }
 # database_url = os.environ.get("DATABASE_URL")
