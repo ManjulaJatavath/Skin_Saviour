@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +25,7 @@ SECRET_KEY = 'django-insecure-vw=quvy!cleg9i4r=#h!&@rn@xkw4nd+8_xotg&174&o@nl)mk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -83,23 +82,23 @@ WSGI_APPLICATION = 'SkinSaviour.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'skin-saviour',
-#         'USER' : 'postgres',
-#         'PASSWORD':'Manjula',
-#         'HOST':'localhost',
-#         'PORT':'5432'
-#     }
-# }
-database_url = os.environ.get("DATABASE_URL")
-print("Database URL:", repr(database_url))  # Print the value for debugging purposes
-
-# Configure the default database using the parsed URL
 DATABASES = {
-    'default': dj_database_url.parse(database_url)
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'skin-saviour',
+        'USER' : 'postgres',
+        'PASSWORD':'Manjula',
+        'HOST':'localhost',
+        'PORT':'5432'
+    }
 }
+# database_url = os.environ.get("DATABASE_URL")
+# print("Database URL:", repr(database_url))  # Print the value for debugging purposes
+
+# # Configure the default database using the parsed URL
+# DATABASES = {
+#     'default': dj_database_url.parse(database_url)
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
