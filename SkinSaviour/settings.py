@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-vw=quvy!cleg9i4r=#h!&@rn@xkw4nd+8_xotg&174&o@nl)mk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG","False").lower()=="true"
+DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -94,10 +94,11 @@ WSGI_APPLICATION = 'SkinSaviour.wsgi.application'
 #     }
 # }
 database_url = os.environ.get("DATABASE_URL")
+
+# Configure the default database using the parsed URL
 DATABASES = {
     'default': dj_database_url.parse(database_url)
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
