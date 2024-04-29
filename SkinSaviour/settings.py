@@ -94,6 +94,7 @@ WSGI_APPLICATION = 'SkinSaviour.wsgi.application'
 #     }
 # }
 database_url = os.environ.get("DATABASE_URL")
+print("Database URL:", repr(database_url))  # Print the value for debugging purposes
 
 # Configure the default database using the parsed URL
 DATABASES = {
